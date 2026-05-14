@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+
+const investigators = [
+  {
+    name: "Greg Palast",
+    role: "Investigative Journalist · Writer & Producer",
+    bio: "[TK] Has reported on Koch Industries for over two decades, dating back to his BBC investigation that first surfaced the Osage oil theft.",
+  },
+  {
+    name: "Jim Elroy",
+    role: "FBI Agent (Retired)",
+    bio: "[TK] The federal investigator who built the original criminal case against Koch Oil's gauging operation on Osage land.",
+  },
+  {
+    name: "Ken Ballen",
+    role: "Federal Prosecutor",
+    bio: "[TK] Led the U.S. Senate investigation that put Koch Oil's theft on the national record.",
+  },
+];
+---
+
+<Base
+  title="The Investigators — Long Knife"
+  description="The criminal case against Charles Koch. Never-before-seen, buried primary-source confessions from inside Koch Oil's theft of Osage oil."
+>
+  <PageHero
+    eyebrow="Chapter 01"
+    title="THE INVESTIGATORS"
+    subtitle="The criminal case against Charles Koch."
+  />
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-lg leading-relaxed text-white/80 sm:text-xl">
+        <span class="text-white/40 italic">
+          [Lede paragraph &mdash; TK. Frame Koch as the defendant in a case that
+          was never tried in open court. Establish that the evidence has been
+          buried for decades, and that Long Knife is the first time the public
+          will see it.]
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- The buried confessions -->
+  <section class="border-y border-white/10 bg-black/30 px-6 py-24">
+    <div class="mx-auto max-w-4xl text-center">
+      <p
+        class="text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        Exclusive
+      </p>
+      <h2
+        class="mt-4 font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight sm:text-6xl"
+      >
+        Never-before-seen<br /> primary-source confessions.
+      </h2>
+      <p
+        class="mx-auto mt-8 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic sm:text-xl"
+      >
+        <span class="text-white/40">
+          [TK &mdash; describe the buried sworn testimony, FBI interview tapes,
+          and internal Koch memoranda that Long Knife will surface for the first
+          time.]
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Investigators grid -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <p
+        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        The Case
+      </p>
+      <h2
+        class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
+      >
+        Who built it.
+      </h2>
+
+      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-3">
+        {
+          investigators.map((person) => (
+            <li class="bg-[var(--color-ink)] p-8">
+              <p class="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+                {person.name}
+              </p>
+              <p class="mt-2 text-[10px] tracking-[0.3em] text-[var(--color-rust)] uppercase">
+                {person.role}
+              </p>
+              <p class="mt-6 text-sm leading-relaxed text-white/60">
+                {person.bio}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

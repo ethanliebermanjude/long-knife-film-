@@ -1,0 +1,108 @@
+---
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/investigators", label: "The Investigators" },
+  { href: "/environment", label: "The Environment" },
+  { href: "/soundtrack", label: "The Soundtrack" },
+  { href: "/osage", label: "The Osage" },
+  { href: "/press", label: "Press" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href || currentPath.startsWith(href + "/");
+};
+---
+
+<header
+  class="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-[color-mix(in_srgb,var(--color-ink)_85%,transparent)] backdrop-blur-md"
+>
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8"
+    aria-label="Primary"
+  >
+    <a
+      href="/"
+      class="font-[family-name:var(--font-display)] text-2xl tracking-wider text-[var(--color-bone)]"
+    >
+      LONG KNIFE
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="hidden gap-8 md:flex">
+      {
+        links.slice(1).map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "text-[11px] tracking-[0.25em] uppercase transition-colors",
+                isActive(link.href)
+                  ? "text-[var(--color-rust)]"
+                  : "text-white/70 hover:text-[var(--color-bone)]",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Mobile nav toggle -->
+    <button
+      type="button"
+      id="nav-toggle"
+      class="md:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <span class="block h-px w-6 bg-[var(--color-bone)]"></span>
+      <span class="mt-1.5 block h-px w-6 bg-[var(--color-bone)]"></span>
+      <span class="mt-1.5 block h-px w-6 bg-[var(--color-bone)]"></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav panel -->
+  <div
+    id="mobile-nav"
+    class="hidden border-t border-white/10 md:hidden"
+    aria-hidden="true"
+  >
+    <ul class="flex flex-col py-2">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "block px-6 py-4 text-xs tracking-[0.3em] uppercase transition-colors",
+                isActive(link.href)
+                  ? "text-[var(--color-rust)]"
+                  : "text-white/80 hover:bg-white/5 hover:text-[var(--color-bone)]",
+              ]}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const panel = document.getElementById("mobile-nav");
+  if (toggle && panel) {
+    toggle.addEventListener("click", () => {
+      const isOpen = !panel.classList.contains("hidden");
+      panel.classList.toggle("hidden");
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      panel.setAttribute("aria-hidden", String(isOpen));
+    });
+  }
+</script>

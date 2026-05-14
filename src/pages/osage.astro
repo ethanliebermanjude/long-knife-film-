@@ -1,0 +1,114 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+
+const voices = [
+  {
+    name: "Geoffrey Standing Bear",
+    role: "Principal Chief, Osage Nation",
+  },
+  {
+    name: "Everett Waller",
+    role: "Chairman, Osage Minerals Council",
+  },
+  {
+    name: "Joe Ben Mashunkashey",
+    role: "Osage Nation",
+  },
+];
+---
+
+<Base
+  title="The Osage — Long Knife"
+  description="The Osage Nation's continuing battle for sovereignty, and at times, basic dignity. The story that Killers of the Flower Moon began."
+>
+  <PageHero
+    eyebrow="Chapter 04"
+    title="THE OSAGE"
+    subtitle="Sovereignty. Dignity. And the story Hollywood didn't finish."
+  />
+
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-lg leading-relaxed text-white/80 sm:text-xl">
+        <span class="text-white/40 italic">
+          [Lede &mdash; TK. Place the Osage Nation at the center. This is their
+          story; Long Knife is documenting a chapter they are still living.]
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- After the Flower Moon -->
+  <section class="border-y border-white/10 bg-black/30 px-6 py-32 text-center">
+    <div class="mx-auto max-w-4xl">
+      <p
+        class="text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        After the Flower Moon
+      </p>
+      <h2
+        class="mt-4 font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight sm:text-6xl"
+      >
+        Killers of the Flower Moon<br />
+        <span class="text-white/60">told the beginning.</span><br />
+        Long Knife tells what came next.
+      </h2>
+      <p
+        class="mx-auto mt-10 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic sm:text-xl"
+      >
+        <span class="text-white/50">
+          [TK &mdash; bridge from the 1920s Osage murders to the Koch-era theft.
+          Establish continuity: same land, same wealth, different criminals.]
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Voices -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <p
+        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        Osage Voices in the Film
+      </p>
+      <h2
+        class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
+      >
+        Featured in Long Knife.
+      </h2>
+
+      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-3">
+        {
+          voices.map((v) => (
+            <li class="bg-[var(--color-ink)] p-8 text-center">
+              <p class="font-[family-name:var(--font-display)] text-3xl tracking-tight">
+                {v.name}
+              </p>
+              <p class="mt-3 text-[10px] tracking-[0.3em] text-[var(--color-rust)] uppercase">
+                {v.role}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sovereignty long-form -->
+  <section class="border-t border-white/10 px-6 py-24">
+    <div
+      class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/80 sm:text-xl"
+    >
+      <p class="text-white/40 italic">
+        [TK &mdash; section on sovereignty. Frame what is at stake legally,
+        politically, and culturally for the Osage Nation today.]
+      </p>
+      <p class="text-white/40 italic">
+        [TK &mdash; section on dignity. The smaller, daily indignities that
+        accompany the larger thefts.]
+      </p>
+    </div>
+  </section>
+</Base>

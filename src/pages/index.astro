@@ -1,120 +1,225 @@
 ---
 import Base from "../layouts/Base.astro";
+
+const pillars = [
+  {
+    href: "/investigators",
+    eyebrow: "01",
+    title: "The Investigators",
+    blurb:
+      "Never-before-seen, buried primary-source confessions from inside Koch Oil.",
+  },
+  {
+    href: "/environment",
+    eyebrow: "02",
+    title: "The Environment",
+    blurb:
+      "Thousands of uncapped, abandoned wells leaking across Osage County.",
+  },
+  {
+    href: "/soundtrack",
+    eyebrow: "03",
+    title: "The Soundtrack",
+    blurb:
+      "Original score and songs by The Osage Singers, Stevie Salas, Mario Grigorov, and more.",
+  },
+  {
+    href: "/osage",
+    eyebrow: "04",
+    title: "The Osage",
+    blurb:
+      "An Osage Nation still fighting for sovereignty — and for dignity.",
+  },
+];
 ---
 
-<Base>
-  <main class="relative">
-    <!-- Hero -->
-    <section
-      class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center"
+<Base
+  title="Long Knife — A True Crime Documentary"
+  description="Long Knife. Narrated by Robert De Niro. A true crime documentary about the Osage Nation, the oil that was stolen from them, and Charles Koch."
+>
+  <!-- Hero -->
+  <section
+    class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-32 pb-20 text-center"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60"
     >
-      <!-- Subtle vertical gradient to give the dark some depth -->
-      <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60"
-      >
-      </div>
+    </div>
 
-      <div class="relative z-10 mx-auto max-w-5xl">
-        <p
-          class="mb-6 text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase sm:text-sm"
-        >
-          A True Crime Documentary
-        </p>
-
-        <h1
-          class="font-[family-name:var(--font-display)] text-[clamp(4rem,18vw,15rem)] leading-[0.85] tracking-tight"
-        >
-          LONG KNIFE
-        </h1>
-
-        <p
-          class="mt-8 text-sm font-light tracking-[0.3em] uppercase sm:text-base"
-        >
-          Narrated by <span class="text-[var(--color-bone)]"
-            >Robert De Niro</span
-          >
-        </p>
-
-        <p
-          class="mx-auto mt-12 max-w-2xl font-[family-name:var(--font-quote)] text-xl leading-relaxed italic sm:text-2xl md:text-3xl"
-        >
-          A gang so powerful they don't operate on the street&hellip; they work
-          from Koch Oil corporate headquarters.
-        </p>
-
-        <div
-          class="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
-        >
-          <a
-            href="#trailer"
-            class="group relative inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
-          >
-            <svg
-              class="h-3 w-3"
-              viewBox="0 0 12 12"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M2 1 L10 6 L2 11 Z"></path>
-            </svg>
-            Watch the Trailer
-          </a>
-          <a
-            href="#support"
-            class="inline-flex items-center gap-3 bg-[var(--color-rust)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-rust-deep)]"
-          >
-            Support the Film
-          </a>
-        </div>
-
-        <p class="mt-20 text-[10px] tracking-[0.3em] text-white/40 uppercase">
-          The Documentary Sequel to <em class="not-italic"
-            >Killers of the Flower Moon</em
-          >
-        </p>
-      </div>
-
-      <!-- Scroll cue -->
-      <div
-        class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
-        aria-hidden="true"
-      >
-        <div class="h-12 w-px animate-pulse bg-white/30"></div>
-      </div>
-    </section>
-
-    <!-- Pull quote -->
-    <section
-      class="border-y border-white/10 px-6 py-32 text-center sm:py-48"
-    >
+    <div class="relative z-10 mx-auto max-w-5xl">
       <p
-        class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl md:text-5xl"
+        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase sm:text-sm"
       >
-        "Behind every great fortune is a great crime.
-        <span class="block text-[var(--color-rust)] sm:mt-4">
-          This is the crime.
-        </span>"
+        A True Crime Documentary
       </p>
-    </section>
 
-    <!-- Placeholder sections for the rest of the page -->
-    <section id="trailer" class="px-6 py-32 text-center">
-      <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
-        Trailer · Coming Soon
-      </p>
-    </section>
+      <h1
+        class="font-[family-name:var(--font-display)] text-[clamp(4rem,18vw,15rem)] leading-[0.85] tracking-tight"
+      >
+        LONG KNIFE
+      </h1>
 
-    <section id="support" class="px-6 py-32 text-center">
-      <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
-        Support the Film · Coming Soon
+      <p
+        class="mx-auto mt-6 max-w-2xl font-[family-name:var(--font-quote)] text-xl italic sm:text-2xl md:text-3xl"
+      >
+        <span class="text-white/60">[subtitle &mdash; TK]</span>
       </p>
-    </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 px-6 py-12 text-center">
-      <p class="text-[10px] tracking-[0.3em] text-white/40 uppercase">
-        &copy; 2026 Palast Investigative Fund
+      <p
+        class="mt-10 text-sm font-light tracking-[0.3em] uppercase sm:text-base"
+      >
+        Narrated by <span class="text-[var(--color-bone)]">Robert De Niro</span>
       </p>
-    </footer>
-  </main>
+
+      <p
+        class="mx-auto mt-10 max-w-2xl font-[family-name:var(--font-quote)] text-lg leading-relaxed italic sm:text-xl"
+      >
+        A gang so powerful they don't operate on the street&hellip; they work
+        from Koch Oil corporate headquarters.
+      </p>
+
+      <div
+        class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+      >
+        <a
+          href="#trailer"
+          class="group inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
+        >
+          <svg
+            class="h-3 w-3"
+            viewBox="0 0 12 12"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M2 1 L10 6 L2 11 Z"></path>
+          </svg>
+          Watch the Trailer
+        </a>
+        <a
+          href="#support"
+          class="inline-flex items-center gap-3 bg-[var(--color-rust)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-rust-deep)]"
+        >
+          Support the Film
+        </a>
+      </div>
+
+      <p class="mt-16 text-[10px] tracking-[0.3em] text-white/40 uppercase">
+        The Documentary Sequel to <em class="not-italic"
+          >Killers of the Flower Moon</em
+        >
+      </p>
+    </div>
+
+    <div
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
+      aria-hidden="true"
+    >
+      <div class="h-12 w-px animate-pulse bg-white/30"></div>
+    </div>
+  </section>
+
+  <!-- Pull quote -->
+  <section class="border-y border-white/10 px-6 py-32 text-center sm:py-48">
+    <p
+      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl md:text-5xl"
+    >
+      "Behind every great fortune is a great crime.
+      <span class="block text-[var(--color-rust)] sm:mt-4">
+        This is the crime.
+      </span>"
+    </p>
+  </section>
+
+  <!-- Origin / production story -->
+  <section class="px-6 py-32 sm:py-40">
+    <div class="mx-auto max-w-3xl">
+      <p
+        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        The Making of Long Knife
+      </p>
+      <h2
+        class="font-[family-name:var(--font-display)] text-5xl leading-tight tracking-tight sm:text-6xl"
+      >
+        Years in the making.
+      </h2>
+      <div
+        class="mt-10 space-y-6 text-lg leading-relaxed text-white/80 sm:text-xl"
+      >
+        <p class="text-white/40 italic">
+          [Placeholder &mdash; TK: how Greg first engaged with the Osage story.]
+        </p>
+        <p class="text-white/40 italic">
+          [Placeholder &mdash; TK: filmed over multiple years across Osage
+          County, Washington, and Wichita.]
+        </p>
+        <p class="text-white/40 italic">
+          [Placeholder &mdash; TK: production value details, archival sources,
+          access to FBI files and primary-source confessions.]
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore the story -->
+  <section class="border-t border-white/10 px-6 py-32">
+    <div class="mx-auto max-w-6xl">
+      <p
+        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+      >
+        The Story, in Four Parts
+      </p>
+      <h2
+        class="text-center font-[family-name:var(--font-display)] text-5xl leading-tight tracking-tight sm:text-6xl"
+      >
+        Explore Long Knife.
+      </h2>
+
+      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-2">
+        {
+          pillars.map((p) => (
+            <li class="bg-[var(--color-ink)]">
+              <a
+                href={p.href}
+                class="group block h-full p-10 transition-colors hover:bg-white/5 sm:p-14"
+              >
+                <p class="text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase">
+                  {p.eyebrow}
+                </p>
+                <h3 class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+                  {p.title}
+                </h3>
+                <p class="mt-4 text-base leading-relaxed text-white/70">
+                  {p.blurb}
+                </p>
+                <p class="mt-8 text-xs tracking-[0.3em] text-white/40 uppercase transition-colors group-hover:text-[var(--color-rust)]">
+                  Read &rarr;
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Trailer placeholder -->
+  <section
+    id="trailer"
+    class="border-t border-white/10 px-6 py-32 text-center"
+  >
+    <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
+      Trailer &middot; Coming Soon
+    </p>
+  </section>
+
+  <!-- Support placeholder -->
+  <section
+    id="support"
+    class="border-t border-white/10 px-6 py-32 text-center"
+  >
+    <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
+      Support the Film &middot; Coming Soon
+    </p>
+  </section>
 </Base>

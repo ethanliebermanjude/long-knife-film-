@@ -1,16 +1,22 @@
 ---
 import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  hideNav?: boolean;
+  hideFooter?: boolean;
 }
 
 const {
   title = "Long Knife — A True Crime Documentary",
   description = "Long Knife. Narrated by Robert De Niro. A true crime documentary about the Osage Nation, the oil that was stolen from them, and Charles Koch.",
   ogImage = "/og-image.jpg",
+  hideNav = false,
+  hideFooter = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -48,6 +54,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
   </head>
   <body class="min-h-screen bg-[var(--color-ink)] text-[var(--color-bone)]">
-    <slot />
+    {!hideNav && <Nav />}
+    <main>
+      <slot />
+    </main>
+    {!hideFooter && <Footer />}
   </body>
 </html>
