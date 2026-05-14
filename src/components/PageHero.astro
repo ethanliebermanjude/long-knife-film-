@@ -5,18 +5,20 @@ interface Props {
   subtitle?: string;
 }
 
-const { eyebrow = "A True Crime Documentary", title, subtitle } = Astro.props;
+const { eyebrow, title, subtitle } = Astro.props;
 ---
 
 <section
   class="relative flex flex-col items-center justify-center overflow-hidden px-6 pt-28 pb-10 text-center"
 >
   <div class="relative z-10 mx-auto max-w-5xl">
-    <p
-      class="mb-4 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase sm:text-sm"
-    >
-      {eyebrow}
-    </p>
+    {
+      eyebrow && (
+        <p class="mb-4 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase sm:text-sm">
+          {eyebrow}
+        </p>
+      )
+    }
     <h1
       class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight"
     >
