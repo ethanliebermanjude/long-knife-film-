@@ -28,13 +28,8 @@ body {
   color: var(--color-bone);
 }
 
-/* Metal-glint hover effect — a bright shine travels around the button border. */
-@property --glint-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
+/* Metal-glint hover effect — a bright highlight follows the cursor,
+   masked to the button's border ring so only the nearest edge glows. */
 .btn-glint {
   position: relative;
   isolation: isolate;
@@ -46,14 +41,11 @@ body {
   inset: 0;
   padding: 2px;
   border-radius: inherit;
-  background: conic-gradient(
-    from var(--glint-angle, 0deg),
-    transparent 0deg,
-    transparent 80deg,
-    rgba(255, 255, 255, 1) 90deg,
-    rgba(255, 255, 255, 0.4) 100deg,
-    transparent 110deg,
-    transparent 360deg
+  background: radial-gradient(
+    140px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.55) 25%,
+    rgba(255, 255, 255, 0) 100%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -65,25 +57,11 @@ body {
   mask-composite: exclude;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms ease;
+  transition: opacity 200ms ease;
   z-index: 1;
 }
 
 .btn-glint:hover::before,
 .btn-glint:focus-visible::before {
   opacity: 1;
-  animation: glint-rotate 1.8s linear infinite;
-}
-
-@keyframes glint-rotate {
-  to {
-    --glint-angle: 360deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn-glint:hover::before,
-  .btn-glint:focus-visible::before {
-    animation: none;
-  }
 }

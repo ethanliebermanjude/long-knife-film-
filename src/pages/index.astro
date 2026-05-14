@@ -176,6 +176,23 @@ const trailerVideoId = "ULRzUMTiANw";
   </dialog>
 
   <script>
+    // Cursor-tracking glint: update --mouse-x / --mouse-y on each
+    // .btn-glint as the cursor moves so the radial-gradient highlight
+    // follows the pointer along the button's border.
+    document
+      .querySelectorAll<HTMLElement>(".btn-glint")
+      .forEach((btn) => {
+        const updatePos = (e: MouseEvent) => {
+          const rect = btn.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          btn.style.setProperty("--mouse-x", `${x}%`);
+          btn.style.setProperty("--mouse-y", `${y}%`);
+        };
+        btn.addEventListener("mouseenter", updatePos);
+        btn.addEventListener("mousemove", updatePos);
+      });
+
     const dialog = document.getElementById(
       "trailer-dialog",
     ) as HTMLDialogElement | null;
