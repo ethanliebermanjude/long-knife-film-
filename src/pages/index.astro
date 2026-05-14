@@ -1,36 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-
-const pillars = [
-  {
-    href: "/investigators",
-    eyebrow: "01",
-    title: "The Investigators",
-    blurb:
-      "Never-before-seen, buried primary-source confessions from inside Koch Oil.",
-  },
-  {
-    href: "/filth",
-    eyebrow: "02",
-    title: "The Filth",
-    blurb:
-      "Thousands of uncapped, abandoned wells leaking across Osage County.",
-  },
-  {
-    href: "/music",
-    eyebrow: "03",
-    title: "The Music",
-    blurb:
-      "Original score and songs by The Osage Singers, Stevie Salas, Mario Grigorov, and more.",
-  },
-  {
-    href: "/osage",
-    eyebrow: "04",
-    title: "The Osage",
-    blurb:
-      "An Osage Nation still fighting for sovereignty — and for dignity.",
-  },
-];
 ---
 
 <Base
@@ -172,48 +141,6 @@ const pillars = [
           access to FBI files and primary-source confessions.]
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- Explore the story -->
-  <section class="border-t border-white/10 px-6 py-32">
-    <div class="mx-auto max-w-6xl">
-      <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
-        The Story, in Four Parts
-      </p>
-      <h2
-        class="text-center font-[family-name:var(--font-display)] text-5xl leading-tight tracking-tight sm:text-6xl"
-      >
-        Explore Long Knife.
-      </h2>
-
-      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-2">
-        {
-          pillars.map((p) => (
-            <li class="bg-[var(--color-ink)]">
-              <a
-                href={p.href}
-                class="group block h-full p-10 transition-colors hover:bg-white/5 sm:p-14"
-              >
-                <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
-                  {p.eyebrow}
-                </p>
-                <h3 class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-                  {p.title}
-                </h3>
-                <p class="mt-4 text-base leading-relaxed text-white/70">
-                  {p.blurb}
-                </p>
-                <p class="mt-8 text-xs tracking-[0.3em] text-white/40 uppercase transition-colors group-hover:text-[var(--color-red)]">
-                  Read &rarr;
-                </p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </section>
 
