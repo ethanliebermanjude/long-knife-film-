@@ -3,8 +3,8 @@
 @theme {
   --color-ink: #0a0908;
   --color-bone: #f5f1e8;
-  --color-rust: #b34e29;
-  --color-rust-deep: #7a3318;
+  --color-red: #b91c1c;
+  --color-red-deep: #7f1d1d;
 
   --font-display: "Bebas Neue", "Impact", "Anton", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -24,6 +24,6 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-rust);
+  background-color: var(--color-red);
   color: var(--color-bone);
 }

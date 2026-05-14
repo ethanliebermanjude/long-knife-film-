@@ -36,54 +36,66 @@ const pillars = [
 <Base
   title="Long Knife — A True Crime Documentary"
   description="Long Knife. Narrated by Robert De Niro. A true crime documentary about the Osage Nation, the oil that was stolen from them, and Charles Koch."
+  ogImage="/poster.jpg"
 >
-  <!-- Hero -->
+  <!-- Hero with video reel -->
   <section
     class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-32 pb-20 text-center"
   >
+    <!-- Background video -->
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/poster.jpg"
+      aria-hidden="true"
+    >
+      <source src="/web-montage.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Vignette overlay for text legibility -->
     <div
-      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60"
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/85"
     >
     </div>
 
+    <!-- Foreground content -->
     <div class="relative z-10 mx-auto max-w-5xl">
       <p
-        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase sm:text-sm"
+        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase sm:text-sm"
       >
         A True Crime Documentary
       </p>
 
       <h1
-        class="font-[family-name:var(--font-display)] text-[clamp(4rem,18vw,15rem)] leading-[0.85] tracking-tight"
+        class="font-[family-name:var(--font-display)] text-[clamp(3.5rem,14vw,11rem)] leading-[0.85] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]"
       >
         LONG KNIFE
       </h1>
 
       <p
-        class="mx-auto mt-6 max-w-2xl font-[family-name:var(--font-quote)] text-xl italic sm:text-2xl md:text-3xl"
+        class="mx-auto mt-6 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] sm:text-xl md:text-2xl"
       >
-        <span class="text-white/60">[subtitle &mdash; TK]</span>
+        <span class="text-white/70">[subtitle &mdash; TK]</span>
       </p>
 
       <p
-        class="mt-10 text-sm font-light tracking-[0.3em] uppercase sm:text-base"
+        class="mt-8 text-sm font-light tracking-[0.3em] uppercase sm:text-base"
       >
-        Narrated by <span class="text-[var(--color-bone)]">Robert De Niro</span>
-      </p>
-
-      <p
-        class="mx-auto mt-10 max-w-2xl font-[family-name:var(--font-quote)] text-lg leading-relaxed italic sm:text-xl"
-      >
-        A gang so powerful they don't operate on the street&hellip; they work
-        from Koch Oil corporate headquarters.
+        Narrated by <span class="text-[var(--color-bone)]"
+          >Robert De Niro</span
+        >
       </p>
 
       <div
-        class="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+        class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
       >
         <a
           href="#trailer"
-          class="group inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
+          class="group inline-flex items-center gap-3 border border-[var(--color-bone)] bg-black/40 px-8 py-4 text-xs tracking-[0.3em] uppercase backdrop-blur-sm transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
         >
           <svg
             class="h-3 w-3"
@@ -97,34 +109,47 @@ const pillars = [
         </a>
         <a
           href="#support"
-          class="inline-flex items-center gap-3 bg-[var(--color-rust)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-rust-deep)]"
+          class="inline-flex items-center gap-3 bg-[var(--color-red)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-red-deep)]"
         >
           Support the Film
         </a>
       </div>
 
-      <p class="mt-16 text-[10px] tracking-[0.3em] text-white/40 uppercase">
+      <p class="mt-14 text-[10px] tracking-[0.3em] text-white/60 uppercase">
         The Documentary Sequel to <em class="not-italic"
           >Killers of the Flower Moon</em
         >
       </p>
     </div>
 
+    <!-- Scroll cue -->
     <div
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30"
+      class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/40"
       aria-hidden="true"
     >
-      <div class="h-12 w-px animate-pulse bg-white/30"></div>
+      <div class="h-12 w-px animate-pulse bg-white/40"></div>
     </div>
   </section>
 
+  <!-- Tagline strip -->
+  <section class="border-y border-white/10 bg-[var(--color-ink)] px-6 py-20 text-center">
+    <p
+      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-xl leading-relaxed italic sm:text-2xl md:text-3xl"
+    >
+      A gang so powerful they don't operate on the street&hellip;
+      <span class="text-[var(--color-red)]">
+        they work from Koch Oil corporate headquarters.
+      </span>
+    </p>
+  </section>
+
   <!-- Pull quote -->
-  <section class="border-y border-white/10 px-6 py-32 text-center sm:py-48">
+  <section class="border-b border-white/10 px-6 py-32 text-center sm:py-48">
     <p
       class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl md:text-5xl"
     >
       "Behind every great fortune is a great crime.
-      <span class="block text-[var(--color-rust)] sm:mt-4">
+      <span class="block text-[var(--color-red)] sm:mt-4">
         This is the crime.
       </span>"
     </p>
@@ -134,7 +159,7 @@ const pillars = [
   <section class="px-6 py-32 sm:py-40">
     <div class="mx-auto max-w-3xl">
       <p
-        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
       >
         The Making of Long Knife
       </p>
@@ -165,7 +190,7 @@ const pillars = [
   <section class="border-t border-white/10 px-6 py-32">
     <div class="mx-auto max-w-6xl">
       <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase"
+        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
       >
         The Story, in Four Parts
       </p>
@@ -183,7 +208,7 @@ const pillars = [
                 href={p.href}
                 class="group block h-full p-10 transition-colors hover:bg-white/5 sm:p-14"
               >
-                <p class="text-xs tracking-[0.4em] text-[var(--color-rust)] uppercase">
+                <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
                   {p.eyebrow}
                 </p>
                 <h3 class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
@@ -192,7 +217,7 @@ const pillars = [
                 <p class="mt-4 text-base leading-relaxed text-white/70">
                   {p.blurb}
                 </p>
-                <p class="mt-8 text-xs tracking-[0.3em] text-white/40 uppercase transition-colors group-hover:text-[var(--color-rust)]">
+                <p class="mt-8 text-xs tracking-[0.3em] text-white/40 uppercase transition-colors group-hover:text-[var(--color-red)]">
                   Read &rarr;
                 </p>
               </a>
