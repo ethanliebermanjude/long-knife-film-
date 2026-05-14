@@ -1,5 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
+
+// YouTube video ID for the trailer (the part after v= in the YouTube URL).
+// Set this to enable the trailer; leave empty to show a "Coming Soon" placeholder.
+const trailerVideoId = "";
 ---
 
 <Base
@@ -64,8 +68,9 @@ import Base from "../layouts/Base.astro";
       <div
         class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
       >
-        <a
-          href="#trailer"
+        <button
+          type="button"
+          id="trailer-button"
           class="group inline-flex items-center gap-3 border border-[var(--color-bone)] bg-black/40 px-8 py-4 text-xs tracking-[0.3em] uppercase backdrop-blur-sm transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
         >
           <svg
@@ -77,7 +82,7 @@ import Base from "../layouts/Base.astro";
             <path d="M2 1 L10 6 L2 11 Z"></path>
           </svg>
           Watch the Trailer
-        </a>
+        </button>
         <a
           href="#support"
           class="inline-flex items-center gap-3 bg-[var(--color-red)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-red-deep)]"
@@ -145,16 +150,6 @@ import Base from "../layouts/Base.astro";
     </div>
   </section>
 
-  <!-- Trailer placeholder -->
-  <section
-    id="trailer"
-    class="border-t border-white/10 px-6 py-32 text-center"
-  >
-    <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
-      Trailer &middot; Coming Soon
-    </p>
-  </section>
-
   <!-- Support placeholder -->
   <section
     id="support"
@@ -164,4 +159,94 @@ import Base from "../layouts/Base.astro";
       Support the Film &middot; Coming Soon
     </p>
   </section>
+
+  <!-- Trailer modal -->
+  <dialog
+    id="trailer-dialog"
+    class="m-0 h-full max-h-screen w-full max-w-full bg-transparent p-0 backdrop:bg-black/85 backdrop:backdrop-blur-sm"
+    aria-label="Long Knife trailer"
+  >
+    <div class="flex min-h-screen items-center justify-center p-4 sm:p-8">
+      <div id="trailer-content" class="relative w-full max-w-5xl">
+        <button
+          type="button"
+          data-trailer-close
+          class="absolute -top-12 right-0 z-10 flex h-10 w-10 items-center justify-center text-white/70 transition-colors hover:text-white"
+          aria-label="Close trailer"
+        >
+          <svg
+            class="h-7 w-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M6 18L18 6"></path>
+          </svg>
+        </button>
+
+        {
+          trailerVideoId ? (
+            <div class="aspect-video w-full bg-black">
+              <iframe
+                id="trailer-iframe"
+                class="h-full w-full"
+                data-src={`https://www.youtube-nocookie.com/embed/${trailerVideoId}?autoplay=1&rel=0&modestbranding=1`}
+                title="Long Knife trailer"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              />
+            </div>
+          ) : (
+            <div class="flex aspect-video w-full items-center justify-center bg-black">
+              <p class="text-xs tracking-[0.4em] text-white/40 uppercase">
+                Trailer · Coming Soon
+              </p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById(
+      "trailer-dialog",
+    ) as HTMLDialogElement | null;
+    const openButton = document.getElementById("trailer-button");
+    const closeButtons = document.querySelectorAll("[data-trailer-close]");
+    const iframe = document.getElementById(
+      "trailer-iframe",
+    ) as HTMLIFrameElement | null;
+
+    openButton?.addEventListener("click", () => {
+      if (iframe && iframe.dataset.src && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+      dialog?.showModal();
+    });
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener("click", () => dialog?.close());
+    });
+
+    // Click on the backdrop area (anywhere outside the modal content) closes.
+    dialog?.addEventListener("click", (event) => {
+      const target = event.target;
+      if (
+        target instanceof Element &&
+        !target.closest("#trailer-content")
+      ) {
+        dialog.close();
+      }
+    });
+
+    // Clear the iframe src on close so the YouTube player stops playing.
+    dialog?.addEventListener("close", () => {
+      if (iframe) iframe.src = "";
+    });
+  </script>
 </Base>
