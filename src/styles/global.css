@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0908;
+  --color-bone: #f5f1e8;
+  --color-rust: #b34e29;
+  --color-rust-deep: #7a3318;
+
+  --font-display: "Bebas Neue", "Impact", "Anton", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-quote: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+}
+
+html {
+  background-color: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+::selection {
+  background-color: var(--color-rust);
+  color: var(--color-bone);
+}
