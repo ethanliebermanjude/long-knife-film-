@@ -4,77 +4,104 @@ import PageHero from "../components/PageHero.astro";
 
 const investigators = [
   {
-    name: "Greg Palast",
-    role: "Investigative Journalist · Writer & Producer",
-    bio: "[TK] Has reported on Koch Industries for over two decades, dating back to his BBC investigation that first surfaced the Osage oil theft.",
+    name: "Everett Waller",
+    role: "Osage Minerals Council",
+    quote: "I hope he enjoys those words in hell.",
   },
   {
     name: "Jim Elroy",
-    role: "FBI Agent (Retired)",
-    bio: "[TK] The federal investigator who built the original criminal case against Koch Oil's gauging operation on Osage land.",
+    role: "Dirty Harry of the FBI",
+    quote: "He would have gotten 70 years.",
+  },
+  {
+    name: "Jim Parris",
+    role: "Koch Insider · Whistleblower",
+    quote: "They were burning the documents.",
+    footnote: "Fired.",
+  },
+  {
+    name: "Greg Palast",
+    role: "Investigative Journalist",
+    quote: "The Kochs' billions came from oil stolen right here.",
   },
   {
     name: "Ken Ballen",
     role: "Federal Prosecutor",
-    bio: "[TK] Led the U.S. Senate investigation that put Koch Oil's theft on the national record.",
+    quote: "My God — here was the evidence.",
   },
+];
+
+const evidence = [
+  "Buried recording of Charlie Koch confessing to the heist",
+  "Internal Koch memos saved from the burn barrel by workers forced to steal",
+  "Secret Koch documents totaling up the skim",
+  "Sealed FBI records",
 ];
 ---
 
 <Base
   title="The Investigators — Long Knife"
-  description="The criminal case against Charles Koch. Never-before-seen, buried primary-source confessions from inside Koch Oil's theft of Osage oil."
+  description="Hunted, harassed, threatened — for revealing the hard evidence of one of the greatest heists in US history."
 >
   <PageHero
     title="THE INVESTIGATORS"
     subtitle="The criminal case against Charles Koch."
   />
 
-  <section class="px-6 py-24">
-    <div class="mx-auto max-w-3xl">
-      <p class="text-lg leading-relaxed text-white/80 sm:text-xl">
-        <span class="text-white/40 italic">
-          [Lede paragraph &mdash; TK. Frame Koch as the defendant in a case that
-          was never tried in open court. Establish that the evidence has been
-          buried for decades, and that Long Knife is the first time the public
-          will see it.]
-        </span>
+  <!-- Lede -->
+  <section class="px-6 py-20">
+    <div
+      class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
+    >
+      <p>
+        Hunted, harassed, threatened &mdash; for revealing the hard evidence of
+        one of the greatest heists in US history: stealing the oil, the cash,
+        and the US government.
+      </p>
+      <p>
+        How Koch got away with it&hellip; until now.
+      </p>
+      <p class="text-white/70">
+        Follow them on the hunt for the story. Here's the evidence. You decide.
       </p>
     </div>
   </section>
 
-  <!-- The buried confessions -->
+  <!-- The Evidence -->
   <section class="border-y border-white/10 bg-black/30 px-6 py-24">
-    <div class="mx-auto max-w-4xl text-center">
-      <p
-        class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
-        Exclusive
-      </p>
-      <h2
-        class="mt-4 font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight sm:text-6xl"
-      >
-        Never-before-seen<br /> primary-source confessions.
-      </h2>
-      <p
-        class="mx-auto mt-8 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic sm:text-xl"
-      >
-        <span class="text-white/40">
-          [TK &mdash; describe the buried sworn testimony, FBI interview tapes,
-          and internal Koch memoranda that Long Knife will surface for the first
-          time.]
-        </span>
-      </p>
-    </div>
-  </section>
-
-  <!-- Investigators grid -->
-  <section class="px-6 py-24">
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-5xl">
       <p
         class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
       >
-        The Case
+        Painstaking. Buried. Recovered.
+      </p>
+      <h2
+        class="text-center font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight sm:text-6xl"
+      >
+        The Evidence.
+      </h2>
+
+      <ul class="mt-14 grid gap-px bg-white/10 sm:grid-cols-2">
+        {
+          evidence.map((item) => (
+            <li class="bg-[var(--color-ink)] p-8 sm:p-10">
+              <p class="text-base leading-relaxed text-white/85 sm:text-lg">
+                {item}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Who built it -->
+  <section class="px-6 py-24">
+    <div class="mx-auto max-w-5xl">
+      <p
+        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
+      >
+        On the Hunt
       </p>
       <h2
         class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
@@ -82,19 +109,26 @@ const investigators = [
         Who built it.
       </h2>
 
-      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-3">
+      <ul class="mt-14 space-y-px bg-white/10">
         {
           investigators.map((person) => (
-            <li class="bg-[var(--color-ink)] p-8">
-              <p class="font-[family-name:var(--font-display)] text-3xl tracking-tight">
-                {person.name}
-              </p>
-              <p class="mt-2 text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase">
-                {person.role}
-              </p>
-              <p class="mt-6 text-sm leading-relaxed text-white/60">
-                {person.bio}
-              </p>
+            <li class="bg-[var(--color-ink)] px-6 py-10 sm:px-10">
+              <div class="mx-auto max-w-4xl">
+                <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
+                  {person.role}
+                </p>
+                <p class="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight sm:text-4xl">
+                  {person.name}
+                </p>
+                <p class="mt-4 font-[family-name:var(--font-quote)] text-xl leading-snug italic text-white/85 sm:text-2xl md:text-3xl">
+                  &ldquo;{person.quote}&rdquo;
+                </p>
+                {person.footnote && (
+                  <p class="mt-3 text-[10px] tracking-[0.3em] text-white/50 uppercase sm:text-xs">
+                    {person.footnote}
+                  </p>
+                )}
+              </div>
             </li>
           ))
         }
