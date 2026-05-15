@@ -47,10 +47,7 @@ const evidence = [
   title="The Investigators — Long Knife"
   description="Hunted, harassed, threatened — for revealing the hard evidence of one of the greatest heists in US history."
 >
-  <PageHero
-    title="THE INVESTIGATORS"
-    subtitle="The criminal case against Charles Koch."
-  />
+  <PageHero title="THE INVESTIGATORS" />
 
   <!-- Lede -->
   <section class="px-6 py-20">
@@ -74,18 +71,7 @@ const evidence = [
   <!-- The Evidence -->
   <section class="border-y border-white/10 bg-black/30 px-6 py-24">
     <div class="mx-auto max-w-5xl">
-      <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
-        Painstaking. Buried. Recovered.
-      </p>
-      <h2
-        class="text-center font-[family-name:var(--font-display)] text-4xl leading-tight tracking-tight sm:text-6xl"
-      >
-        The Evidence.
-      </h2>
-
-      <figure class="mt-12">
+      <figure>
         <img
           src="/evidence-koch-memos.jpg"
           alt="Burning Koch Industries memorandum — internal memos saved from the burn barrel."
@@ -111,35 +97,29 @@ const evidence = [
   <!-- Who built it -->
   <section class="px-6 py-24">
     <div class="mx-auto max-w-5xl">
-      <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
-        On the Hunt
-      </p>
-      <h2
-        class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
-      >
-        Who built it.
-      </h2>
-
-      <ul class="mt-14 space-y-px bg-white/10">
+      <ul class="space-y-px bg-white/10">
         {
           investigators.map((person) => (
             <li class="bg-[var(--color-ink)]">
-              <div class="mx-auto grid max-w-5xl items-center gap-8 px-6 py-10 sm:gap-12 sm:px-10 md:grid-cols-[1fr_1.4fr]">
+              <div class="mx-auto max-w-5xl px-6 py-10 sm:px-10 md:flex md:items-center md:gap-10">
                 {person.portrait ? (
-                  <div class="aspect-[4/5] overflow-hidden border border-white/10 bg-black/30">
-                    <img
-                      src={person.portrait}
-                      alt={`Portrait of ${person.name}`}
-                      class="h-full w-full object-cover"
-                      loading="lazy"
-                    />
+                  <div class="mb-6 w-32 md:mb-0 md:w-40 md:flex-shrink-0">
+                    <div class="aspect-[4/5] overflow-hidden border border-white/10 bg-black/30">
+                      <img
+                        src={person.portrait}
+                        alt={`Portrait of ${person.name}`}
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 ) : (
-                  <div class="hidden md:block" aria-hidden="true" />
+                  <div
+                    class="hidden md:block md:w-40 md:flex-shrink-0"
+                    aria-hidden="true"
+                  />
                 )}
-                <div>
+                <div class="md:flex-1">
                   <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
                     {person.role}
                   </p>
