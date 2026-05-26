@@ -21,6 +21,9 @@ const facts = [
   },
   { label: "Fiscal Sponsor", value: "Palast Investigative Fund" },
 ];
+
+const guardianUrl =
+  "https://www.theguardian.com/commentisfree/2023/oct/20/martin-scorsese-killers-of-the-flower-moon-osage-us-government";
 ---
 
 <Base
@@ -73,6 +76,43 @@ const facts = [
           ))
         }
       </dl>
+    </div>
+  </section>
+
+  <!-- Further reading -->
+  <section class="px-6 py-20 sm:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p
+        class="mb-8 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
+      >
+        Further Reading
+      </p>
+      <a
+        href={guardianUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block border border-white/10 p-8 transition-colors hover:border-white/30 hover:bg-white/5 sm:p-10"
+      >
+        <p class="text-[10px] tracking-[0.3em] text-white/50 uppercase">
+          The Guardian &middot; 20 October 2023
+        </p>
+        <h3
+          class="mt-4 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic transition-colors group-hover:text-[var(--color-bone)] sm:text-3xl"
+        >
+          &ldquo;The Osage want you to know their story doesn't end with Killers
+          of the Flower Moon&rdquo;
+        </h3>
+        <p class="mt-5 text-base leading-relaxed text-white/70 sm:text-lg">
+          By Greg Palast. The Reign of Terror was only the beginning: the Osage
+          oil that built the Koch family's fortune is still being taken, and the
+          Nation is still fighting to cap the abandoned wells poisoning its land.
+        </p>
+        <p
+          class="mt-6 text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase"
+        >
+          Read at The Guardian &rarr;
+        </p>
+      </a>
     </div>
   </section>
 
