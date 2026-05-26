@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+
+// Every still and photo from the film not featured elsewhere on the site.
+const photos = [
+  { src: "/gallery/koch-rico-document.jpg", alt: "An FBI file naming Charles Koch — theft and racketeering on the Osage Reservation." },
+  { src: "/gallery/burning-koch-memo.jpg", alt: "A burning Koch Industries memorandum." },
+  { src: "/gallery/over-short-chart.jpg", alt: "A Koch 'Over/(Short)' chart tallying the barrels skimmed." },
+  { src: "/gallery/koch-accounting.jpg", alt: "A Koch Oil accounting printout." },
+  { src: "/gallery/koch-email.jpg", alt: "An internal Koch Industries email printout." },
+  { src: "/gallery/whistleblower-tape-1.jpg", alt: "A confidential Koch-employee whistleblower, on camera." },
+  { src: "/gallery/whistleblower-tape-2.jpg", alt: "A confidential Koch-employee whistleblower, on camera." },
+  { src: "/gallery/jim-elroy.jpg", alt: "FBI investigator Jim Elroy holds up his credentials." },
+  { src: "/gallery/elroy-cabin.jpg", alt: "Jim Elroy outside a log cabin." },
+  { src: "/gallery/greg-palast.jpg", alt: "Greg Palast inspecting oil-well piping in the field." },
+  { src: "/gallery/ken-ballen.jpg", alt: "Federal prosecutor Ken Ballen, from hearing footage." },
+  { src: "/gallery/land-records.jpg", alt: "Researching deeds at a county land-records counter." },
+  { src: "/gallery/pipeline-fire.jpg", alt: "An oil tank and pipeline fire." },
+  { src: "/gallery/drilling-rig.jpg", alt: "A crew working at an active drilling rig." },
+  { src: "/gallery/abandoned-well-casing.jpg", alt: "A rusted, abandoned well casing left in a field." },
+  { src: "/gallery/salvage-yard.jpg", alt: "An aerial view of an oilfield-equipment salvage yard." },
+  { src: "/gallery/scoring-session.jpg", alt: "A scoring session for the film's music." },
+  { src: "/gallery/mario-and-heike.jpg", alt: "Composer Mario Grigorov and cellist Heike Schuch recording the score." },
+  { src: "/gallery/osage-woman-field.jpg", alt: "An Osage woman wrapped in a blanket on a winter prairie." },
+  { src: "/gallery/osage-woman-archival.jpg", alt: "A sepia archival portrait of an Osage woman." },
+  { src: "/gallery/osage-1920s.jpg", alt: "A 1920s photograph of Osage citizens with a businessman." },
+  { src: "/gallery/archival-aviator.jpg", alt: "An archival photograph of an aviator in an open cockpit, from the Osage oil-boom era." },
+  { src: "/gallery/archival-ballerina.jpg", alt: "An archival photograph of a ballerina on stage." },
+  { src: "/gallery/wounded-knee.jpg", alt: "An archival photograph of a young serviceman with a rifle and a dog." },
+];
+---
+
+<Base
+  title="Photo Gallery — Long Knife"
+  description="Stills and photographs from Long Knife — the evidence, the investigators, the Osage land, and the making of the film."
+>
+  <PageHero
+    eyebrow="The Stills"
+    title="PHOTO GALLERY"
+    subtitle="Images from Long Knife — the evidence, the people, and the land."
+  />
+
+  <section class="px-6 pb-24">
+    <div class="mx-auto max-w-6xl columns-2 gap-3 sm:gap-4 md:columns-3">
+      {
+        photos.map((p) => (
+          <a
+            href={p.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group mb-3 block break-inside-avoid sm:mb-4"
+          >
+            <img
+              src={p.src}
+              alt={p.alt}
+              loading="lazy"
+              class="w-full border border-white/10 transition-opacity duration-200 group-hover:opacity-85"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>
