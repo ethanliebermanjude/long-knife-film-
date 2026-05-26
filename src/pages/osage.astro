@@ -5,14 +5,24 @@ const voices = [
   {
     name: "Geoffrey Standing Bear",
     role: "Principal Chief, Osage Nation",
+    image: "/osage-standing-bear.jpg",
+    bio: [
+      "Principal Chief of the Osage Nation, a trial lawyer, and a consulting producer on <cite>Long Knife</cite>. He is filing lawsuits and leading the campaign to take back control of the Nation's land — and to shut down the abandoned wells still poisoning it.",
+    ],
   },
   {
     name: "Everett Waller",
     role: "Chairman, Osage Minerals Council",
+    image: "/osage-waller.jpg",
+    bio: [
+      "Chairman of the Osage Minerals Council — and, as the film's narrator Robert De Niro puts it, an Osage hunter who tracks down the oil rustlers. He has spent years chasing the theft of his Nation's crude.",
+    ],
   },
   {
-    name: "Joe Ben Mashunkashey",
+    name: "Tara Damron",
     role: "Osage Nation",
+    image: "/osage-damron.jpg",
+    bio: [],
   },
 ];
 ---
@@ -76,7 +86,7 @@ const voices = [
     <img
       src="/osage-couple.jpg"
       alt="An Osage couple on the prairie in traditional regalia, the man holding an eagle-feather fan."
-      class="h-[55vh] w-full object-cover sm:h-[75vh]"
+      class="h-[55vh] w-full object-cover object-top sm:h-[75vh]"
       loading="lazy"
     />
     <div
@@ -157,7 +167,7 @@ const voices = [
 
   <!-- Voices -->
   <section class="border-t border-white/10 px-6 py-24">
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-5xl">
       <p
         class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
       >
@@ -169,18 +179,47 @@ const voices = [
         Featured in Long Knife.
       </h2>
 
-      <ul class="mt-16 grid gap-px bg-white/10 sm:grid-cols-3">
+      <ul class="mt-16 space-y-16 sm:space-y-24">
         {
-          voices.map((v) => (
-            <li class="bg-[var(--color-ink)] p-8 text-center">
-              <p class="font-[family-name:var(--font-display)] text-3xl tracking-tight">
-                {v.name}
-              </p>
-              <p class="mt-3 text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase">
-                {v.role}
-              </p>
-            </li>
-          ))
+          voices.map((v, index) => {
+            const isReversed = index % 2 === 1;
+            return (
+              <li>
+                <div
+                  class:list={[
+                    "md:flex md:items-center md:gap-12",
+                    isReversed && "md:flex-row-reverse",
+                  ]}
+                >
+                  <div class="md:w-1/2 md:flex-shrink-0">
+                    <div class="aspect-[3/2] overflow-hidden border border-white/10 bg-black/30">
+                      <img
+                        src={v.image}
+                        alt={v.name}
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-6 md:mt-0 md:w-1/2">
+                    <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
+                      {v.role}
+                    </p>
+                    <h3 class="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+                      {v.name}
+                    </h3>
+                    {v.bio.length > 0 && (
+                      <div class="mt-5 space-y-4 text-base leading-relaxed text-white/75">
+                        {v.bio.map((para) => (
+                          <p set:html={para} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </li>
+            );
+          })
         }
       </ul>
     </div>
