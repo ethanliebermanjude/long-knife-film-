@@ -54,8 +54,8 @@ const profiles = [
   title="The Music — Long Knife"
   description="No ordinary documentary score. The Osage Singers, Stevie Salas, Mario Grigorov, and Heike Schuch — music supervised by Margaret Saadi Kramer."
 >
-  <!-- Hero: Osage carrying the drum (no text overlay) -->
-  <section class="pt-16 sm:pt-20">
+  <!-- Hero: Osage carrying the drum (no text overlay), flush to top -->
+  <section>
     <figure class="relative aspect-video w-full overflow-hidden">
       <img
         src="/osage-prairie-walk.jpg"
@@ -72,21 +72,12 @@ const profiles = [
   <!-- Title + lede -->
   <section class="border-t border-white/10 px-6 py-20 sm:py-24">
     <div class="mx-auto max-w-3xl">
-      <h1
-        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-tight"
-      >
-        THE MUSIC
-      </h1>
-      <p
-        class="mt-4 font-[family-name:var(--font-quote)] text-xl text-white/80 italic sm:text-2xl"
-      >
-        No ordinary documentary score.
-      </p>
+      <h1 class="sr-only">The Music</h1>
       <div
-        class="mt-10 space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
+        class="space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
       >
         <p>
-        The score for <cite>Long Knife</cite> is supervised by Margaret Saadi
+          The score for <cite>Long Knife</cite> is supervised by Margaret Saadi
         Kramer (<cite>Mediha</cite>, <cite>The Jewel Thief</cite>), with original
         compositions by Mario Grigorov. The film brings together a collaboration
         of masters: Scott George and the Osage Singers carry the spiritual and
