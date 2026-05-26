@@ -31,69 +31,57 @@ const voices = [
   title="The Osage — Long Knife"
   description="The Osage Nation: once the richest people in the world, and still fighting for sovereignty over their own land. The story Killers of the Flower Moon began."
 >
-  <!-- Hero -->
-  <section
-    class="relative flex min-h-[68vh] flex-col items-center justify-end overflow-hidden px-6 pt-28 pb-16 text-center"
-  >
-    <img
-      src="/osage-prairie-walk.jpg"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover"
-      aria-hidden="true"
-    />
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)]/40 via-[var(--color-ink)]/30 to-[var(--color-ink)]"
-    >
-    </div>
-    <div class="relative z-10 mx-auto max-w-4xl">
+  <!-- Hero: Everett Waller & Marian (no text overlay) -->
+  <section class="pt-16 sm:pt-20">
+    <figure class="relative aspect-video w-full overflow-hidden">
+      <img
+        src="/osage-couple.jpg"
+        alt="Everett Waller and Marian on the Osage prairie in traditional regalia."
+        class="h-full w-full object-cover"
+      />
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-ink)]"
+      >
+      </div>
+    </figure>
+  </section>
+
+  <!-- Title + lede -->
+  <section class="px-6 py-20 sm:py-24">
+    <div class="mx-auto max-w-3xl">
       <h1
-        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]"
+        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-tight"
       >
         THE OSAGE
       </h1>
       <p
-        class="mx-auto mt-4 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] sm:text-xl md:text-2xl"
+        class="mt-4 font-[family-name:var(--font-quote)] text-xl text-white/80 italic sm:text-2xl"
       >
         Sovereignty, dignity, and the story Hollywood didn't finish.
       </p>
-    </div>
-  </section>
-
-  <!-- Lede -->
-  <section class="px-6 py-20 sm:py-24">
-    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-      <p
-        class="font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
+      <div
+        class="mt-10 space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
       >
-        The richest people in the world.
-      </p>
+        <p
+          class="font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
+        >
+          The richest people in the world.
+        </p>
       <p>
         In the 1870s, starvation and smallpox killed 90% of the tribe. Then oil
         was discovered beneath their land — and by 1919 the Osage Nation held
         the most valuable mineral rights on the continent, the richest people on
         earth per capita.
       </p>
-      <p>
-        <cite>Long Knife</cite> is the story of what happened next — and of what
-        is still happening. It is the documentary sequel to
-        <cite>Killers of the Flower Moon</cite>: same land, same wealth,
-        different criminals.
-      </p>
+        <p>
+          <cite>Long Knife</cite> is the story of what happened next — and of
+          what is still happening. It is the documentary sequel to
+          <cite>Killers of the Flower Moon</cite>: same land, same wealth,
+          different criminals.
+        </p>
+      </div>
     </div>
   </section>
-
-  <figure class="relative">
-    <img
-      src="/osage-couple.jpg"
-      alt="An Osage couple on the prairie in traditional regalia, the man holding an eagle-feather fan."
-      class="h-[55vh] w-full object-cover object-top sm:h-[75vh]"
-      loading="lazy"
-    />
-    <div
-      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-transparent to-transparent"
-    >
-    </div>
-  </figure>
 
   <!-- Sovereignty -->
   <section class="px-6 py-24">
@@ -205,7 +193,7 @@ const voices = [
                     <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
                       {v.role}
                     </p>
-                    <h3 class="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+                    <h3 class="mt-2 font-[family-name:var(--font-quote)] text-4xl leading-tight sm:text-5xl">
                       {v.name}
                     </h3>
                     {v.bio.length > 0 && (

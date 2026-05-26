@@ -3,8 +3,11 @@
 @theme {
   --color-ink: #0a0908;
   --color-bone: #f5f1e8;
-  --color-red: #b91c1c;
-  --color-red-deep: #7f1d1d;
+  /* Accent: a warm Pendleton-blanket orange. Far more readable on the
+     near-black background than the old red. (Token name kept as --color-red
+     so existing usages need no change.) */
+  --color-red: #e8843c;
+  --color-red-deep: #c26a2a;
 
   --font-display: "Bebas Neue", "Impact", "Anton", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;

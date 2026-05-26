@@ -39,3 +39,6 @@ assets-source/
 website-images-extracted/
 website images-*.zip
 DSC*.JPG
+
+# director / client notes kept locally
+*.pdf

@@ -54,38 +54,38 @@ const profiles = [
   title="The Music — Long Knife"
   description="No ordinary documentary score. The Osage Singers, Stevie Salas, Mario Grigorov, and Heike Schuch — music supervised by Margaret Saadi Kramer."
 >
-  <!-- Hero -->
-  <section
-    class="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 pt-28 pb-16 text-center"
-  >
-    <img
-      src="/music-drum-circle-wide.jpg"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover opacity-40"
-      aria-hidden="true"
-    />
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)]/70 via-[var(--color-ink)]/60 to-[var(--color-ink)]"
-    >
-    </div>
-    <div class="relative z-10 mx-auto max-w-4xl">
+  <!-- Hero: Osage carrying the drum (no text overlay) -->
+  <section class="pt-16 sm:pt-20">
+    <figure class="relative aspect-video w-full overflow-hidden">
+      <img
+        src="/osage-prairie-walk.jpg"
+        alt="Osage citizens crossing the prairie in regalia, one carrying a large drum."
+        class="h-full w-full object-cover"
+      />
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-ink)]"
+      >
+      </div>
+    </figure>
+  </section>
+
+  <!-- Title + lede -->
+  <section class="border-t border-white/10 px-6 py-20 sm:py-24">
+    <div class="mx-auto max-w-3xl">
       <h1
-        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]"
+        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] tracking-tight"
       >
         THE MUSIC
       </h1>
       <p
-        class="mx-auto mt-4 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] sm:text-xl md:text-2xl"
+        class="mt-4 font-[family-name:var(--font-quote)] text-xl text-white/80 italic sm:text-2xl"
       >
         No ordinary documentary score.
       </p>
-    </div>
-  </section>
-
-  <!-- Lede -->
-  <section class="border-t border-white/10 px-6 py-20 sm:py-24">
-    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-      <p>
+      <div
+        class="mt-10 space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
+      >
+        <p>
         The score for <cite>Long Knife</cite> is supervised by Margaret Saadi
         Kramer (<cite>Mediha</cite>, <cite>The Jewel Thief</cite>), with original
         compositions by Mario Grigorov. The film brings together a collaboration
@@ -94,12 +94,13 @@ const profiles = [
         (Justin Timberlake, Mick Jagger); and cellist Heike Schuch (Salzburg
         Philharmonic) rounds out the ensemble.
       </p>
-      <p>
-        Together they create something that resists the conventions of the form
-        — textural grit that puts you inside the world of the invaders carrying
-        out their crimes, balanced against the hope and joy that has always
-        defined the Osage people's refusal to disappear.
-      </p>
+        <p>
+          Together they create something that resists the conventions of the
+          form — textural grit that puts you inside the world of the invaders
+          carrying out their crimes, balanced against the hope and joy that has
+          always defined the Osage people's refusal to disappear.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -131,7 +132,7 @@ const profiles = [
                   <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
                     {p.role}
                   </p>
-                  <h2 class="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+                  <h2 class="mt-2 font-[family-name:var(--font-quote)] text-4xl leading-tight sm:text-5xl">
                     {p.name}
                   </h2>
                   <div class="mt-5 space-y-4 text-base leading-relaxed text-white/75">
