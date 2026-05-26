@@ -4,11 +4,29 @@ import Base from "../layouts/Base.astro";
 // YouTube video ID for the trailer (the part after v= in the YouTube URL).
 // Set this to enable the trailer; leave empty to show a "Coming Soon" placeholder.
 const trailerVideoId = "ULRzUMTiANw";
+
+const paths = [
+  {
+    href: "/crimes",
+    label: "The Crimes",
+    blurb: "Pollution, climate, and a century of killings — and how they were made legal.",
+  },
+  {
+    href: "/investigators",
+    label: "The Investigators",
+    blurb: "The FBI agent and the Osage oil hunter who busted the rustlers.",
+  },
+  {
+    href: "/osage",
+    label: "The Osage",
+    blurb: "The richest people in the world — and the fight still being waged on their land.",
+  },
+];
 ---
 
 <Base
   title="Long Knife — A True Crime Documentary"
-  description="Long Knife. Narrated by Robert De Niro. A true crime documentary about the Osage Nation, the oil that was stolen from them, and Charles Koch."
+  description="Long Knife. Narrated by Robert De Niro. The biggest oil heist in US history — over $6 billion stolen from the Osage Nation by the company now known as Koch Industries."
   ogImage="/poster.jpg"
 >
   <!-- Hero with video reel -->
@@ -30,7 +48,7 @@ const trailerVideoId = "ULRzUMTiANw";
 
     <!-- Vignette overlay for text legibility -->
     <div
-      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/60"
+      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/70"
     >
     </div>
 
@@ -43,18 +61,43 @@ const trailerVideoId = "ULRzUMTiANw";
           alt=""
           width="1200"
           height="800"
-          class="mx-auto h-auto max-h-[65vh] w-auto max-w-full drop-shadow-[0_8px_32px_rgba(0,0,0,0.9)]"
+          class="mx-auto h-auto max-h-[60vh] w-auto max-w-full drop-shadow-[0_8px_32px_rgba(0,0,0,0.9)]"
         />
       </h1>
 
       <p
         class="mx-auto -mt-6 max-w-3xl font-[family-name:var(--font-quote)] text-xl italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] sm:text-2xl md:text-3xl"
       >
-        The Osage Nation, Koch Oil, and the New <cite class="not-italic"
+        The Osage Nation, Koch Oil, and the new <cite class="not-italic"
           >Killers of the Flower Moon</cite
         >
       </p>
 
+      <div
+        class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+      >
+        <button
+          type="button"
+          id="trailer-button"
+          class="btn-glint inline-flex items-center gap-3 bg-[var(--color-red)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-red-deep)]"
+        >
+          <svg
+            class="h-3.5 w-3.5"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M3 2l11 6-11 6z"></path>
+          </svg>
+          Watch the Trailer
+        </button>
+        <a
+          href="/crimes"
+          class="btn-glint inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors"
+        >
+          The Crimes
+        </a>
+      </div>
     </div>
 
     <!-- Scroll cue -->
@@ -66,28 +109,182 @@ const trailerVideoId = "ULRzUMTiANw";
     </div>
   </section>
 
-  <!-- Pull quote -->
-  <section class="border-y border-white/10 px-6 py-32 text-center sm:py-48">
-    <p
-      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl md:text-5xl"
+  <!-- The Crime — De Niro narration -->
+  <section class="relative overflow-hidden px-6 py-28 sm:py-36">
+    <img
+      src="/pumpjack-sunset.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-25"
+      aria-hidden="true"
+      loading="lazy"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)] via-[var(--color-ink)]/80 to-[var(--color-ink)]"
     >
-      "Behind every great fortune is a great crime.
-      <span class="block text-[var(--color-red)] sm:mt-4">
-        This is the crime."
+    </div>
+
+    <div class="relative mx-auto max-w-4xl">
+      <p class="text-center text-xs tracking-[0.5em] text-[var(--color-red)] uppercase">
+        The Crime
+      </p>
+      <blockquote
+        class="mt-10 space-y-6 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic sm:text-3xl md:text-[2.5rem] md:leading-[1.2]"
+      >
+        <p>
+          &ldquo;You have to ask yourself: how does some small-time operator out
+          of Wichita suddenly find himself with $6 billion in oil&hellip; that
+          isn't his?
+        </p>
+        <p>
+          You get it the old-fashioned way: you steal it. You steal it from the
+          Indians. It's American as apple pie.
+        </p>
+        <p>
+          And you know how you get away with it? You muscle some witnesses, buy
+          some politicians, buy judges and cops. And there are those
+          &lsquo;difficult&rsquo; ones who won't sell&hellip; well, no one talks
+          about them&hellip; but we will.
+        </p>
+        <p>
+          This is the story of the guy who took the $6 billion &mdash; Charlie.
+          But Charlie had a problem: Everett Big Elk Waller. He's an Osage
+          hunter: he hunts down oil rustlers.
+        </p>
+        <p>
+          And Charlie had another problem: Jim Elroy. Known as the Dirty Harry
+          of the FBI.&rdquo;
+        </p>
+      </blockquote>
+      <p
+        class="mt-10 text-center text-[11px] tracking-[0.3em] text-white/60 uppercase"
+      >
+        — Robert De Niro, narrating <span class="text-white/80">Long Knife</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Synopsis -->
+  <section class="border-t border-white/10 px-6 py-24 sm:py-32">
+    <div class="mx-auto max-w-3xl">
+      <p
+        class="font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
+      >
+        The biggest oil heist in U.S. history.
+      </p>
+      <p class="mt-8 text-lg leading-relaxed text-white/85 sm:text-xl">
+        Over $6 billion in crude, carried away in the night by a trucking
+        company &mdash; now known as <strong class="text-[var(--color-bone)]"
+          >Koch Industries</strong
+        >.
+      </p>
+    </div>
+  </section>
+
+  <figure class="relative">
+    <img
+      src="/night-oil-tanker.jpg"
+      alt="A tanker truck and oil storage tanks at night, headlights burning, a figure climbing a tank ladder."
+      class="h-[55vh] w-full object-cover sm:h-[75vh]"
+      loading="lazy"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-transparent to-transparent"
+    >
+    </div>
+  </figure>
+
+  <section class="px-6 py-24 sm:py-32">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        For the first time, we can reveal the dark source of the Kochs' first
+        billions &mdash; and the genesis of the feared Koch Political Network.
+        And how Charlie bought, muscled and threatened his way out of one felony
+        indictment after another, controlling U.S. Senators, judges and
+        prosecutors with a grip no mafia boss could dream of.
+      </p>
+      <p>
+        We've got Charlie's secret taped confession. We've got the eyewitnesses
+        and the stone-cold confidential documents that nail the thievery.
+      </p>
+      <p>
+        Chief FBI investigator Elroy joins Osage spiritual leader and
+        investigator Waller, who bust the oil rustlers &mdash; and re-enact the
+        armed showdown with Koch goons.
+      </p>
+      <p>
+        You like <cite>Landman</cite> and <cite>The Lowdown</cite>? This is the
+        true Oklahoma oil-patch story &mdash; far scarier, and the crimes far
+        bigger, than fiction. And the bad news is&hellip;
+      </p>
+    </div>
+  </section>
+
+  <!-- Standing Bear: it's not over -->
+  <section
+    class="border-y border-white/10 bg-black/30 px-6 py-28 text-center sm:py-40"
+  >
+    <p
+      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-4xl leading-tight text-white italic sm:text-6xl"
+    >
+      &ldquo;&hellip;it's not over.
+      <span class="block text-[var(--color-red)] sm:mt-3">
+        It's still happening.&rdquo;
       </span>
+    </p>
+    <p class="mt-10 text-[11px] tracking-[0.3em] text-white/60 uppercase">
+      — Osage Chief Standing Bear, Consulting Producer of <span
+        class="text-white/80">Long Knife</span
+      >
     </p>
   </section>
 
+  <!-- Pull quote -->
+  <section class="px-6 py-28 text-center sm:py-40">
+    <p
+      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl md:text-5xl"
+    >
+      Behind every great fortune is a great crime.
+      <span class="block text-[var(--color-red)] sm:mt-4"> This is the crime. </span>
+    </p>
+  </section>
+
+  <!-- Dig deeper -->
+  <section class="border-t border-white/10 px-6 py-24">
+    <div class="mx-auto max-w-6xl">
+      <p
+        class="mb-12 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
+      >
+        Follow the Story
+      </p>
+      <ul class="grid gap-px bg-white/10 sm:grid-cols-3">
+        {
+          paths.map((p) => (
+            <li class="bg-[var(--color-ink)]">
+              <a
+                href={p.href}
+                class="group flex h-full flex-col p-8 transition-colors hover:bg-white/5 sm:p-10"
+              >
+                <span class="font-[family-name:var(--font-display)] text-3xl tracking-tight transition-colors group-hover:text-[var(--color-red)] sm:text-4xl">
+                  {p.label}
+                </span>
+                <span class="mt-4 text-base leading-relaxed text-white/70">
+                  {p.blurb}
+                </span>
+                <span class="mt-6 text-[10px] tracking-[0.3em] text-white/40 uppercase">
+                  Enter &rarr;
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
 
   <!-- Support the Film -->
-  <section
-    id="support"
-    class="border-t border-white/10 px-6 py-32 sm:py-40"
-  >
+  <section id="support" class="border-t border-white/10 px-6 py-32 sm:py-40">
     <div class="mx-auto max-w-3xl text-center">
-      <p
-        class="mb-6 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
+      <p class="mb-6 text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
         Help Fund Long Knife
       </p>
       <h2
@@ -179,19 +376,17 @@ const trailerVideoId = "ULRzUMTiANw";
     // Cursor-tracking glint: update --mouse-x / --mouse-y on each
     // .btn-glint as the cursor moves so the radial-gradient highlight
     // follows the pointer along the button's border.
-    document
-      .querySelectorAll<HTMLElement>(".btn-glint")
-      .forEach((btn) => {
-        const updatePos = (e: MouseEvent) => {
-          const rect = btn.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          btn.style.setProperty("--mouse-x", `${x}%`);
-          btn.style.setProperty("--mouse-y", `${y}%`);
-        };
-        btn.addEventListener("mouseenter", updatePos);
-        btn.addEventListener("mousemove", updatePos);
-      });
+    document.querySelectorAll<HTMLElement>(".btn-glint").forEach((btn) => {
+      const updatePos = (e: MouseEvent) => {
+        const rect = btn.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        btn.style.setProperty("--mouse-x", `${x}%`);
+        btn.style.setProperty("--mouse-y", `${y}%`);
+      };
+      btn.addEventListener("mouseenter", updatePos);
+      btn.addEventListener("mousemove", updatePos);
+    });
 
     const dialog = document.getElementById(
       "trailer-dialog",
@@ -216,10 +411,7 @@ const trailerVideoId = "ULRzUMTiANw";
     // Click on the backdrop area (anywhere outside the modal content) closes.
     dialog?.addEventListener("click", (event) => {
       const target = event.target;
-      if (
-        target instanceof Element &&
-        !target.closest("#trailer-content")
-      ) {
+      if (target instanceof Element && !target.closest("#trailer-content")) {
         dialog.close();
       }
     });

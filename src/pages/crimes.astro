@@ -1,0 +1,426 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+
+const sections = [
+  { href: "#pollution", label: "Pollution" },
+  { href: "#climate", label: "Climate" },
+  { href: "#flower-moon", label: "Killers of the Flower Moon" },
+];
+---
+
+<Base
+  title="The Crimes — Long Knife"
+  description="Pollution, climate destruction, and a century of killings. The crimes the Kochs and Big Oil committed on the Osage Reservation — and how they made them legal."
+>
+  <PageHero
+    eyebrow="Behind every great fortune"
+    title="THE CRIMES"
+    subtitle="They didn't just steal the oil. They poisoned the land, broke the climate, and — long before that — got away with murder."
+  />
+
+  <!-- Section jump nav -->
+  <nav
+    class="sticky top-[57px] z-30 border-y border-white/10 bg-[color-mix(in_srgb,var(--color-ink)_88%,transparent)] backdrop-blur-md"
+    aria-label="Crimes on this page"
+  >
+    <ul
+      class="mx-auto flex max-w-5xl items-center justify-center gap-6 overflow-x-auto px-6 py-4 text-[10px] tracking-[0.25em] whitespace-nowrap text-white/60 uppercase sm:gap-10 sm:text-xs"
+    >
+      {
+        sections.map((s) => (
+          <li>
+            <a class="transition-colors hover:text-[var(--color-red)]" href={s.href}>
+              {s.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <!-- ============================ POLLUTION ============================ -->
+  <section id="pollution" class="scroll-mt-32 px-6 pt-24 pb-12 sm:pt-32">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
+        Crime One
+      </p>
+      <h2
+        class="mt-4 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-tight sm:text-7xl"
+      >
+        Pollution Crimes
+      </h2>
+      <p class="mt-8 text-lg leading-relaxed text-white/85 sm:text-xl">
+        Charlie Koch didn't steal all the Osage oil. Some his crews dumped into
+        creeks and rivers. Koch let pipes crack, spewing murderous poisons. Koch
+        Oil was indicted for over <strong class="text-[var(--color-bone)]"
+          >315 counts of felonious criminal polluting</strong
+        >. And walked away smelling like a rose.
+      </p>
+    </div>
+  </section>
+
+  <figure class="relative my-12">
+    <img
+      src="/oily-water.jpg"
+      alt="A pool of crude-fouled water, a wellhead reflected in its black surface, on the Osage Reservation."
+      class="h-[45vh] w-full object-cover sm:h-[60vh]"
+      loading="lazy"
+    />
+  </figure>
+
+  <section class="px-6 py-12">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        The crime spree continued. We reveal the inside story of how Koch bought
+        and bullied his way out of these crimes &mdash; from having Koch thugs
+        impersonate an FBI agent to terrorize a whistleblower, to running
+        counterintelligence operations against the Feds, to slipping millions
+        through &ldquo;Triad,&rdquo; a corporate front.
+      </p>
+      <p>
+        How did he get away with it? The Kochs bought themselves a Congress and
+        pleasured a Supreme Court Justice. And they simply had Congress and the
+        Court <em>make their crimes legal</em>.
+      </p>
+      <p
+        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl text-white italic sm:text-3xl"
+      >
+        Capone never thought of that.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-6 pb-24">
+    <div class="mx-auto grid max-w-5xl gap-px bg-white/10 sm:grid-cols-3">
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/koch-warning-sign.jpg"
+          alt="A weathered Koch high-pressure petroleum warning sign fallen in the brush."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/pumpjack-overcast.jpg"
+          alt="A derelict pump jack under a flat grey sky, a figure crouched at its base."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/abandoned-wells-poster.jpg"
+          alt="A weathered notice tallying Oklahoma's thousands of abandoned well sites."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================ CLIMATE ============================ -->
+  <section
+    id="climate"
+    class="scroll-mt-32 border-t border-white/10 bg-black/30 px-6 pt-24 pb-12 sm:pt-32"
+  >
+    <div class="mx-auto max-w-3xl">
+      <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
+        Crime Two
+      </p>
+      <h2
+        class="mt-4 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-tight sm:text-7xl"
+      >
+        Climate Crimes
+      </h2>
+    </div>
+  </section>
+
+  <section class="bg-black/30 px-6 pb-12">
+    <div class="mx-auto grid max-w-5xl gap-12 text-center sm:grid-cols-2">
+      <div>
+        <p
+          class="font-[family-name:var(--font-display)] text-6xl tracking-tight text-[var(--color-red)] sm:text-7xl"
+        >
+          16,000
+        </p>
+        <p class="mt-2 text-[10px] tracking-[0.3em] text-white/50 uppercase">
+          Abandoned wells left spewing methane
+        </p>
+      </div>
+      <div>
+        <p
+          class="font-[family-name:var(--font-display)] text-6xl tracking-tight text-[var(--color-red)] sm:text-7xl"
+        >
+          8,000%
+        </p>
+        <p class="mt-2 text-[10px] tracking-[0.3em] text-white/50 uppercase">
+          More damaging to the climate than CO₂
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-black/30 px-6 pb-12">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        After Koch and Big Oil &mdash; Getty, Sinclair and Exxon &mdash; sucked
+        billions of dollars in petroleum from the Osage Reservation, they left
+        the Tribe with 16,000 abandoned wells spewing chemicals and methane.
+        There is nothing worse than methane when it comes to global warming
+        &mdash; 8,000% more damaging than CO₂.
+      </p>
+    </div>
+  </section>
+
+  <figure class="relative my-12">
+    <img
+      src="/pumpjack-windfarm.jpg"
+      alt="A lone pump jack in a green field beneath a wind farm and storm-grey sky."
+      class="h-[45vh] w-full object-cover sm:h-[65vh]"
+      loading="lazy"
+    />
+  </figure>
+
+  <section class="bg-black/30 px-6 py-12">
+    <div class="mx-auto max-w-3xl space-y-8 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <blockquote
+        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic sm:text-3xl"
+      >
+        &ldquo;Now how do you allow a company to just walk away like that?&rdquo;
+        <cite
+          class="mt-4 block font-[family-name:var(--font-body)] text-[10px] tracking-[0.3em] text-white/50 not-italic uppercase"
+        >
+          — Everett Waller, Chairman, Osage Minerals Council
+        </cite>
+      </blockquote>
+      <p>
+        It's against the law. But there's the law, and there's oil. When shown
+        the tape of Charlie Koch's concealed confession to the theft, Waller
+        said:
+      </p>
+      <blockquote
+        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic sm:text-3xl"
+      >
+        &ldquo;I hope he enjoys those comments in hell. The greed just takes you
+        over like a drug.&rdquo;
+        <cite
+          class="mt-4 block font-[family-name:var(--font-body)] text-[10px] tracking-[0.3em] text-white/50 not-italic uppercase"
+        >
+          — Everett Waller
+        </cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="bg-black/30 px-6 pb-12">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        Waller and Chief Standing Bear are blocked from cleaning the filth on
+        their lands by a campaign &mdash; funded by a half billion from the
+        Kochs &mdash; to say that global warming &ldquo;is a hoax.&rdquo; What
+        you see on the Osage Reservation is hardly a hoax. It is a horror show,
+        an environmental crime only recently made legal. As Greg Palast, the
+        investigative reporter who's hunted the Kochs for decades, explains:
+      </p>
+      <blockquote
+        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic sm:text-3xl"
+      >
+        &ldquo;My mob-boss uncle once told me: the best crime is the one you
+        make legal.&rdquo;
+        <cite
+          class="mt-4 block font-[family-name:var(--font-body)] text-[10px] tracking-[0.3em] text-white/50 not-italic uppercase"
+        >
+          — Greg Palast
+        </cite>
+      </blockquote>
+      <p>
+        We'll show you how Charlie & Co. pulled it off. Who will win this
+        showdown &mdash; the Kochs or the Osage? &ldquo;Grandfather Sun,&rdquo;
+        as Standing Bear says, needs to know. The Chief, a militant trial
+        lawyer, is not waiting to find out. He's filing lawsuits and leading a
+        campaign to take back control of his Nation's property &mdash; now
+        lorded over by the Bureau of Indian Affairs &mdash; and to close up the
+        earth-destroying methane belching into the atmosphere.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-black/30 px-6 py-24 text-center">
+    <p
+      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-5xl"
+    >
+      &ldquo;Let's not beat around the bush.
+      <span class="block text-[var(--color-red)] sm:mt-3">
+        This is occupied territory.&rdquo;
+      </span>
+    </p>
+    <p class="mt-8 text-[10px] tracking-[0.3em] text-white/50 uppercase">
+      — Principal Chief Geoffrey Standing Bear
+    </p>
+  </section>
+
+  <!-- ===================== KILLERS OF THE FLOWER MOON ===================== -->
+  <section id="flower-moon" class="scroll-mt-32 px-6 pt-24 pb-12 sm:pt-32">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
+        Crime Three
+      </p>
+      <h2
+        class="mt-4 font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-tight sm:text-6xl"
+      >
+        The Crimes of the<br />Killers of the Flower Moon
+      </h2>
+      <p class="mt-8 text-lg leading-relaxed text-white/85 sm:text-xl">
+        In the 1870s, starvation and smallpox killed 90% of the tribe. After oil
+        was discovered, by 1919 the Osage had become, per capita, the richest
+        people in the world. Then the killings began.
+      </p>
+      <p class="mt-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+        <em class="text-[var(--color-bone)]">Long Knife</em> is the documentary
+        sequel to <cite>Killers of the Flower Moon</cite>, the Martin Scorsese
+        masterpiece about the 200 Osage murdered for their oil. Long Knife
+        uncovers hard facts about this Reign of Terror, unearthed in this new
+        investigation.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-6 pb-12">
+    <div class="mx-auto grid max-w-5xl gap-px bg-white/10 sm:grid-cols-3">
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-henry-roan.jpg"
+          alt="Archival newspaper headline reporting the frozen body of Henry Roan found shot through the head."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-skull-testimony.jpg"
+          alt="Archival newspaper headline: a skull shown as testimony in an Osage case."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-indian-baby.jpg"
+          alt="Archival newspaper headline reporting an Osage infant among the victims."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="px-6 py-12 text-center">
+    <blockquote
+      class="mx-auto max-w-3xl font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
+    >
+      &ldquo;There are all these little baby graves out there.&rdquo;
+      <cite
+        class="mt-6 block font-[family-name:var(--font-body)] text-[10px] tracking-[0.3em] text-white/50 not-italic uppercase"
+      >
+        — Mogri Lookout, Osage Elder
+      </cite>
+    </blockquote>
+  </section>
+
+  <section class="px-6 py-12">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        How do you get away with cold-blooded murder day after day? Because
+        killing an Indian on the Osage was not considered a crime until 1924.
+        History is ever-present. The crimes of the Kochs were foretold in the
+        Trail of Tears, which ended with the Osage expulsion from Kansas after
+        the robber baron Jay Gould convinced Congress to let him buy the Osage
+        reservation for just <strong class="text-[var(--color-bone)]"
+          >12 cents an acre</strong
+        >. It was a scandal even then.
+      </p>
+    </div>
+  </section>
+
+  <figure class="relative my-12">
+    <img
+      src="/archival-osage-ancestor.jpg"
+      alt="A treated sepia portrait of an Osage ancestor on the prairie."
+      class="h-[45vh] w-full object-cover sm:h-[65vh]"
+      loading="lazy"
+    />
+  </figure>
+
+  <section class="px-6 py-12">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        In Oklahoma, Chief Bigheart wrote down their Constitution, in which the
+        Chief was democratically elected and all land held in common. The U.S.
+        Congress revoked their Constitution, replaced Bigheart with a council of
+        oil men, and chopped up their land into 2,000 parcels &mdash; the easier
+        to steal and cheat the Osage out of their oil. And to kill those who
+        resisted.
+      </p>
+      <p>
+        For a century, until 2006, the oil men ruled over the Osage and turned a
+        blind eye to Koch's burglaries. Congress forced the Osage to sell their
+        oil rights. J. Paul Getty became the richest man in the world from the
+        oil land he bought from the Osage for $500.
+      </p>
+      <p
+        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl text-white italic sm:text-3xl"
+      >
+        The Kochs invented nothing new.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-6 pb-24">
+    <div class="mx-auto grid max-w-5xl gap-px bg-white/10 sm:grid-cols-3">
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-chief-black-dog.jpg"
+          alt="A sepia studio portrait of Chief Black Dog and his wife, Pawhuska, Oklahoma."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-indian-termination.jpg"
+          alt="An archival newspaper op-ed on the federal Indian Termination policy."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="bg-[var(--color-ink)]">
+        <img
+          src="/archival-oil-derrick.jpg"
+          alt="An early oil derrick silhouetted against billowing black smoke at dusk."
+          class="aspect-[4/3] w-full object-cover"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Close / CTA -->
+  <section class="border-t border-white/10 px-6 py-24 text-center">
+    <p
+      class="mx-auto max-w-3xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-4xl"
+    >
+      Behind every great fortune is a great crime.
+      <span class="block text-[var(--color-red)] sm:mt-3">This is the crime.</span>
+    </p>
+    <div class="mt-12">
+      <a
+        href="/investigators"
+        class="inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
+      >
+        Meet the Investigators
+      </a>
+    </div>
+  </section>
+</Base>

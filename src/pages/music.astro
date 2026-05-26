@@ -1,71 +1,150 @@
 ---
 import Base from "../layouts/Base.astro";
-import PageHero from "../components/PageHero.astro";
 
-const musicians = [
+const profiles = [
   {
-    name: "The Osage Singers",
+    name: "Margaret Saadi Kramer",
+    role: "Music Supervisor",
+    image: "/music-kramer.jpg",
+    bio: [
+      "Margaret Saadi Kramer is known as a warrior on behalf of her artists — award-winning composers, Rock and Roll Hall of Famers, Grammy-nominated songwriters, and emerging talents alike. She has steered the music for full-length documentaries (<cite>The Rise of the Red Hot Chili Peppers</cite>), feature films (<cite>Bolívar</cite>), and long-running series (<cite>Eastbound & Down</cite>) in a range of production roles.",
+      "With legendary singer-songwriters Wayne Kramer and Billy Bragg, she co-founded Jail Guitar Doors USA, a Los Angeles–based 501(c)(3) nonprofit with a mission to help rehabilitate people in prison.",
+    ],
+  },
+  {
+    name: "Scott George & the Osage Singers",
     role: "Traditional Songs",
-    bio: "[TK] Voices of the Osage Nation, performing songs that root Long Knife in the language and ceremony of the people whose story it tells.",
+    image: "/music-osage-singers.jpg",
+    bio: [
+      "Scott George is a singer, drummer, and composer of the Osage Nation, raised in Hominy, Oklahoma — the heart of Osage country. He has sung in I'n-Lon-Schka drum committees since 1983.",
+      "When Martin Scorsese attended the Osage Nation's annual I'n-Lon-Schka dances in 2021, they knew they had found the sound that would close <cite>Killers of the Flower Moon</cite>. George composed &ldquo;Wahzhazhe (A Song for My People)&rdquo; for the film's finale — earning an Academy Award nomination for Best Original Song, and becoming the first Osage and the first Indigenous person ever nominated in that category.",
+    ],
   },
   {
     name: "Stevie Salas",
-    role: "Guitarist · Composer",
-    bio: "[TK] Apache guitarist and producer (Mick Jagger, Rod Stewart) bringing his signature rock-and-roots sound to the film.",
+    role: "Guitar",
+    image: "/music-salas.jpg",
+    bio: [
+      "Stevie Salas — guitarist, writer, producer, and composer — has recorded on over 70 albums with artists as diverse as George Clinton, Justin Timberlake, Buddy Miles, T.I., Mick Jagger, and Rod Stewart. Having sold over two million solo albums worldwide, he has been cited as one of the top 50 guitarists of all time.",
+      "A Native American, Salas has long championed Indigenous communities, including serving as Advisor of Contemporary Music at the Smithsonian's National Museum of the American Indian. He received the Native American Lifetime Achievement Award in 2009, and his documentary <cite>Rumble: The Indians Who Rocked the World</cite> won the Special Jury Award at the Sundance Film Festival.",
+    ],
   },
   {
     name: "Mario Grigorov",
-    role: "Composer",
-    bio: "[TK] Bulgarian-born film composer whose credits include Precious and The Bad Sleep Well, scoring Long Knife's investigative spine.",
+    role: "Original Compositions",
+    image: "/music-grigorov.jpg",
+    bio: [
+      "Mario Grigorov is a Bulgarian-born composer and concert pianist whose musical life began at age five, when the Sofia Conservatorium waived its minimum-age requirement to admit him. He studied classical piano through Tehran, Berlin, and Vienna before landing in Sydney, where he absorbed jazz and electronic music — and then in Los Angeles, where a Warner Bros. A&R executive heard him improvising in a music store and signed him on the spot.",
+      "His scores range from the raw intimacy of Lee Daniels' <cite>Precious</cite> to the Oscar-winning <cite>Taxi to the Dark Side</cite>, and he co-wrote an original song with J.K. Rowling for <cite>Fantastic Beasts and Where to Find Them</cite>. His earlier collaboration with David Ambrose on <cite>Vigilantes Inc.</cite> made <cite>Long Knife</cite> a natural continuation.",
+    ],
   },
   {
     name: "Heike Schuch",
     role: "Cello",
-    bio: "[TK &mdash; one-line bio for the German cellist.]",
+    image: "/music-schuch.jpg",
+    bio: [
+      "Heike Schuch is a German cellist, singer, and actor. Admitted to the Cologne University of Music at sixteen, she went on to study at the Mozarteum Salzburg under masters of the European cello tradition, winning prizes at the International Johannes Brahms Competition and earning the City of Salzburg Promotion Prize at the Salzburg Festival.",
+      "She has toured the world with the renowned quartet Salut Salon, shared stages with artists from Roland Kaiser to Kanye West, and pushed her cello into ambitious crossover territory through her solo project Charlie Cello — in which she performs as cellist, singer, pianist, guitarist, and drummer all at once.",
+    ],
   },
 ];
 ---
 
 <Base
   title="The Music — Long Knife"
-  description="The music of Long Knife. The Osage Singers, Stevie Salas, Mario Grigorov, and more."
+  description="No ordinary documentary score. The Osage Singers, Stevie Salas, Mario Grigorov, and Heike Schuch — music supervised by Margaret Saadi Kramer."
 >
-  <PageHero
-    title="THE MUSIC"
-    subtitle="A score worthy of the story."
-  />
-
-  <section class="px-6 py-20">
-    <div class="mx-auto max-w-3xl">
-      <p class="text-lg leading-relaxed text-white/80 sm:text-xl">
-        <span class="text-white/40 italic">
-          [Lede &mdash; TK. One paragraph framing the music as a deliberate
-          collaboration between Osage tradition and world-class film
-          composition.]
-        </span>
+  <!-- Hero -->
+  <section
+    class="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 pt-28 pb-16 text-center"
+  >
+    <img
+      src="/music-drum-circle-wide.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-40"
+      aria-hidden="true"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-[var(--color-ink)]/70 via-[var(--color-ink)]/60 to-[var(--color-ink)]"
+    >
+    </div>
+    <div class="relative z-10 mx-auto max-w-4xl">
+      <h1
+        class="font-[family-name:var(--font-display)] text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]"
+      >
+        THE MUSIC
+      </h1>
+      <p
+        class="mx-auto mt-4 max-w-2xl font-[family-name:var(--font-quote)] text-lg italic drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] sm:text-xl md:text-2xl"
+      >
+        No ordinary documentary score.
       </p>
     </div>
   </section>
 
-  <section class="border-t border-white/10 px-6 py-24">
-    <div class="mx-auto max-w-6xl">
-      <ul class="grid gap-px bg-white/10 sm:grid-cols-2">
-        {
-          musicians.map((m) => (
-            <li class="bg-[var(--color-ink)] p-10 sm:p-12">
-              <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase">
-                {m.role}
-              </p>
-              <p class="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
-                {m.name}
-              </p>
-              <p class="mt-6 text-base leading-relaxed text-white/70">
-                {m.bio}
-              </p>
-            </li>
-          ))
-        }
-      </ul>
+  <!-- Lede -->
+  <section class="border-t border-white/10 px-6 py-20 sm:py-24">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
+      <p>
+        The score for <cite>Long Knife</cite> is supervised by Margaret Saadi
+        Kramer (<cite>Mediha</cite>, <cite>The Jewel Thief</cite>), with original
+        compositions by Mario Grigorov. The film brings together a collaboration
+        of masters: Scott George and the Osage Singers carry the spiritual and
+        cultural weight of the land itself; guitar comes from Stevie Salas
+        (Justin Timberlake, Mick Jagger); and cellist Heike Schuch (Salzburg
+        Philharmonic) rounds out the ensemble.
+      </p>
+      <p>
+        Together they create something that resists the conventions of the form
+        — textural grit that puts you inside the world of the invaders carrying
+        out their crimes, balanced against the hope and joy that has always
+        defined the Osage people's refusal to disappear.
+      </p>
     </div>
+  </section>
+
+  <!-- Profiles -->
+  <section class="border-t border-white/10 px-6 py-16 sm:py-24">
+    <ul class="mx-auto max-w-5xl space-y-16 sm:space-y-24">
+      {
+        profiles.map((p, index) => {
+          const isReversed = index % 2 === 1;
+          return (
+            <li>
+              <div
+                class:list={[
+                  "md:flex md:items-center md:gap-12",
+                  isReversed && "md:flex-row-reverse",
+                ]}
+              >
+                <div class="md:w-1/2 md:flex-shrink-0">
+                  <div class="aspect-[3/2] overflow-hidden border border-white/10 bg-black/30">
+                    <img
+                      src={p.image}
+                      alt={`${p.name}`}
+                      class="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <div class="mt-6 md:mt-0 md:w-1/2">
+                  <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
+                    {p.role}
+                  </p>
+                  <h2 class="mt-2 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+                    {p.name}
+                  </h2>
+                  <div class="mt-5 space-y-4 text-base leading-relaxed text-white/75">
+                    {p.bio.map((para) => (
+                      <p set:html={para} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
   </section>
 </Base>

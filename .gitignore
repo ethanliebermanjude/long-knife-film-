@@ -34,3 +34,8 @@ Thumbs.db
 
 # full-resolution source assets (delivered separately, not in git)
 assets-source/
+
+# raw image deliveries (extracted into public/ as needed, originals kept out of git)
+website-images-extracted/
+website images-*.zip
+DSC*.JPG
