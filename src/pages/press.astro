@@ -1,58 +1,98 @@
 ---
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
+
+const facts = [
+  { label: "Narrated by", value: "Robert De Niro" },
+  { label: "Directed by", value: "David Ambrose" },
+  { label: "Written & Produced by", value: "Greg Palast" },
+  {
+    label: "Produced by",
+    value: "David Ambrose · Stephen Nemeth · George DiCaprio · Geoffrey Standing Bear",
+  },
+  {
+    label: "Featuring",
+    value:
+      "Principal Chief Geoffrey Standing Bear · Everett Waller · Jim Elroy · Ken Ballen",
+  },
+  {
+    label: "Subject",
+    value: "The theft of $6 billion in oil from the Osage Nation — and the company now known as Koch Industries",
+  },
+  { label: "Fiscal Sponsor", value: "Palast Investigative Fund" },
+];
 ---
 
 <Base
   title="Press — Long Knife"
-  description="Press kit, accolades, and media contact for Long Knife, a true crime documentary narrated by Robert De Niro."
+  description="Press materials and media contact for Long Knife, a true crime documentary narrated by Robert De Niro about the Osage Nation and Koch Industries."
 >
   <PageHero
     eyebrow="For Journalists"
     title="PRESS"
-    subtitle="Materials, accolades, and contact for the press."
+    subtitle="Press materials and media contact for Long Knife."
   />
 
-  <!-- Accolades -->
-  <section class="px-6 py-24">
-    <div class="mx-auto max-w-5xl">
+  <!-- Logline -->
+  <section class="px-6 py-20 sm:py-24">
+    <div
+      class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
+    >
       <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
+        class="font-[family-name:var(--font-quote)] text-2xl text-white italic sm:text-3xl"
       >
-        Selections &amp; Awards
+        A true crime documentary narrated by Robert De Niro.
       </p>
-      <h2
-        class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
-      >
-        Accolades.
-      </h2>
-      <div class="mt-16 grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-3">
-        <div class="border border-white/10 p-8">
-          <p class="text-[10px] tracking-[0.3em] text-white/40 uppercase">
-            [Festival &mdash; TK]
-          </p>
-          <p class="mt-3 font-[family-name:var(--font-display)] text-2xl tracking-tight">
-            [Award &mdash; TK]
-          </p>
-        </div>
-        <div class="border border-white/10 p-8">
-          <p class="text-[10px] tracking-[0.3em] text-white/40 uppercase">
-            [Festival &mdash; TK]
-          </p>
-          <p class="mt-3 font-[family-name:var(--font-display)] text-2xl tracking-tight">
-            [Award &mdash; TK]
-          </p>
-        </div>
-        <div class="border border-white/10 p-8">
-          <p class="text-[10px] tracking-[0.3em] text-white/40 uppercase">
-            [Festival &mdash; TK]
-          </p>
-          <p class="mt-3 font-[family-name:var(--font-display)] text-2xl tracking-tight">
-            [Award &mdash; TK]
-          </p>
-        </div>
-      </div>
+      <p>
+        <cite>Long Knife</cite> tells the story of the biggest oil heist in U.S.
+        history &mdash; over $6 billion stolen from the Osage Nation by the
+        company now known as Koch Industries &mdash; and the Osage-led fight to
+        take it back. It is the documentary sequel to
+        <cite>Killers of the Flower Moon</cite>.
+      </p>
     </div>
+  </section>
+
+  <!-- Fact sheet -->
+  <section class="border-y border-white/10 bg-black/30 px-6 py-20 sm:py-24">
+    <div class="mx-auto max-w-3xl">
+      <p
+        class="mb-10 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
+      >
+        The Film at a Glance
+      </p>
+      <dl class="divide-y divide-white/10">
+        {
+          facts.map((f) => (
+            <div class="grid gap-1 py-5 sm:grid-cols-[200px_1fr] sm:gap-8">
+              <dt class="pt-1 text-[10px] tracking-[0.3em] text-white/50 uppercase">
+                {f.label}
+              </dt>
+              <dd class="text-base text-white/90 sm:text-lg">{f.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <!-- Press materials -->
+  <section class="px-6 py-24 text-center">
+    <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
+      Press Materials
+    </p>
+    <h2
+      class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
+    >
+      Available on request.
+    </h2>
+    <p
+      class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl"
+    >
+      High-resolution stills, the electronic press kit, and interview requests
+      with the filmmakers are available to accredited press. Get in touch and
+      we'll send materials over.
+    </p>
   </section>
 
   <!-- Press contact -->
@@ -60,7 +100,9 @@ import PageHero from "../components/PageHero.astro";
     <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
       Press Contact
     </p>
-    <p class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl">
+    <p
+      class="mt-4 font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
+    >
       Get in touch.
     </p>
     <a
