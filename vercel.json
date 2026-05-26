@@ -3,7 +3,17 @@
   "redirects": [
     {
       "source": "/environment",
-      "destination": "/filth",
+      "destination": "/crimes",
+      "permanent": true
+    },
+    {
+      "source": "/filth",
+      "destination": "/crimes",
+      "permanent": true
+    },
+    {
+      "source": "/investigators",
+      "destination": "/crimes",
       "permanent": true
     },
     {
