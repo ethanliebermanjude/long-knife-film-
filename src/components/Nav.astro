@@ -1,31 +1,20 @@
 ---
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 
-const topLevelLinks = [
+const links = [
   { href: "/crimes", label: "The Crimes" },
-  { href: "/investigators", label: "The Investigators" },
-  { href: "/osage", label: "The Osage" },
-];
-
-const aboutLinks = [
-  { href: "/press", label: "Press" },
   { href: "/music", label: "The Music" },
   { href: "/filmmakers", label: "The Filmmakers" },
+  { href: "/press", label: "Press" },
 ];
 
-// Mobile menu shows everything flat — no nested dropdown on small screens.
-const mobileLinks = [
-  { href: "/", label: "Home" },
-  ...topLevelLinks,
-  ...aboutLinks,
-];
+// Mobile menu adds an explicit Home link; desktop uses the wordmark for Home.
+const mobileLinks = [{ href: "/", label: "Home" }, ...links];
 
 const isActive = (href: string) => {
   if (href === "/") return currentPath === "/";
   return currentPath === href || currentPath.startsWith(href + "/");
 };
-
-const isAboutActive = aboutLinks.some((l) => isActive(l.href));
 ---
 
 <header
@@ -45,7 +34,7 @@ const isAboutActive = aboutLinks.some((l) => isActive(l.href));
     <!-- Desktop nav -->
     <ul class="hidden items-center gap-8 lg:flex">
       {
-        topLevelLinks.map((link) => (
+        links.map((link) => (
           <li>
             <a
               href={link.href}
@@ -61,61 +50,6 @@ const isAboutActive = aboutLinks.some((l) => isActive(l.href));
           </li>
         ))
       }
-
-      <!-- About dropdown -->
-      <li class="group relative">
-        <button
-          type="button"
-          aria-haspopup="true"
-          aria-expanded="false"
-          class:list={[
-            "inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase transition-colors group-hover:text-[var(--color-bone)] group-focus-within:text-[var(--color-bone)]",
-            isAboutActive ? "text-[var(--color-red)]" : "text-white/70",
-          ]}
-        >
-          About
-          <svg
-            class="h-2 w-2.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
-            viewBox="0 0 10 6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M1 1 L5 5 L9 1"></path>
-          </svg>
-        </button>
-        <!-- Invisible hover-bridge so the menu doesn't close while crossing the gap -->
-        <div
-          class="pointer-events-none absolute top-full right-0 h-3 w-full group-hover:pointer-events-auto group-focus-within:pointer-events-auto"
-          aria-hidden="true"
-        >
-        </div>
-        <ul
-          class="invisible absolute top-full right-0 mt-3 min-w-[220px] -translate-y-1 flex-col border border-white/10 bg-[color-mix(in_srgb,var(--color-ink)_95%,transparent)] py-2 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
-          style="display: flex;"
-        >
-          {
-            aboutLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class:list={[
-                    "block px-5 py-3 text-[11px] tracking-[0.25em] uppercase transition-colors",
-                    isActive(link.href)
-                      ? "text-[var(--color-red)]"
-                      : "text-white/80 hover:bg-white/5 hover:text-[var(--color-bone)]",
-                  ]}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </li>
     </ul>
 
     <!-- Mobile nav toggle -->
