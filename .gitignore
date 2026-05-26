@@ -42,3 +42,6 @@ DSC*.JPG
 
 # director / client notes kept locally
 *.pdf
+
+# local dev server log
+preview.log
