@@ -96,159 +96,143 @@ const trailerVideoId = "ULRzUMTiANw";
     </div>
   </section>
 
-  <!-- De Niro narration, part 1 (text left / oil-tank image right) -->
+  <!-- ─── SCROLL NARRATIVE ────────────────────────────────────────────────
+       Layout philosophy:
+       • 5-column grid: image takes 3 cols (~60%), text takes 2 cols (~40%)
+       • Text column is inset with heavy padding so it feels tight and urgent
+       • Sections alternate image-right / image-left for diagonal eye pull
+       • A thin accent rule + eyebrow label on each text block creates rhythm
+       • Min-height on image cells keeps them tall; text cells are self-sizing
+  ──────────────────────────────────────────────────────────────────────── -->
+
+  <!-- § 1  De Niro — image RIGHT, text left -->
   <section class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl md:grid-cols-2 md:items-stretch">
-      <div class="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
-        <blockquote
-          class="space-y-5 text-lg leading-relaxed text-white sm:text-xl"
-        >
-          <p>
-            &ldquo;You have to ask yourself: how does some small-time operator
-            out of Wichita suddenly find himself with $6 billion in oil&hellip;
-            that isn't his?
-          </p>
-          <p>
-            You get it the old-fashioned way: you steal it. You steal it from
-            the Indians. It's American as apple pie.
-          </p>
-          <p>
-            And you know how you get away with it? You muscle some witnesses,
-            buy some politicians, buy judges and cops. And there are those
-            &lsquo;difficult&rsquo; ones who won't sell&hellip; well, no one
-            talks about them&hellip; but we will.
-          </p>
-        </blockquote>
+    <div class="md:grid md:grid-cols-5 md:items-stretch">
+
+      <!-- Text: 2 cols, heavily padded inset -->
+      <div class="flex items-center px-8 py-16 sm:px-12 sm:py-20 md:col-span-2 md:px-10 md:py-24 lg:px-16 lg:py-28">
+        <div class="w-full">
+          <!-- eyebrow -->
+          <p class="mb-6 text-[10px] tracking-[0.45em] text-[var(--color-red)] uppercase">Narrated by Robert De Niro</p>
+          <!-- rule -->
+          <div class="mb-8 h-px w-10 bg-white/20"></div>
+          <blockquote class="space-y-5 font-[family-name:var(--font-quote)] text-xl leading-relaxed text-white italic sm:text-2xl">
+            <p>&ldquo;You have to ask yourself: how does some small-time operator out of Wichita suddenly find himself with $6 billion in oil&hellip; that isn't his?</p>
+            <p>You get it the old-fashioned way: you steal it. You steal it from the Indians. It's American as apple pie.</p>
+            <p>And you know how you get away with it? You muscle some witnesses, buy some politicians, buy judges and cops. And there are those &lsquo;difficult&rsquo; ones who won't sell&hellip; well, no one talks about them&hellip; but we will.&rdquo;</p>
+          </blockquote>
+        </div>
       </div>
-      <figure class="relative h-72 sm:h-96 md:h-auto">
+
+      <!-- Image: 3 cols -->
+      <figure class="relative min-h-72 sm:min-h-96 md:col-span-3 md:min-h-0">
         <img
           src="/night-oil-tanker.jpg"
           alt="Oil storage tanks and a tanker truck at night, headlights burning."
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
+        <!-- left-side gradient bleed so image merges into text column -->
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--color-ink)] to-transparent md:block hidden"></div>
       </figure>
     </div>
   </section>
 
-  <!-- De Niro narration, part 2 (evidence image left / text right) -->
+  <!-- § 2  Evidence — image LEFT, text right -->
   <section class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl md:grid-cols-2 md:items-stretch">
-      <div class="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
-        <div>
-          <blockquote
-            class="space-y-5 text-lg leading-relaxed text-white sm:text-xl"
-          >
-            <p>
-              This is the story of the guy who took the $6 billion &mdash;
-              Charlie. But Charlie had a problem: Everett Big Elk Waller. He's
-              an Osage hunter: he hunts down oil rustlers.
-            </p>
-            <p>
-              And Charlie had another problem: Jim Elroy. Known as the Dirty
-              Harry of the FBI.&rdquo;
-            </p>
-          </blockquote>
-          <p class="mt-8 text-[11px] tracking-[0.3em] text-white/60 uppercase">
-            — Robert De Niro, narrating
-            <span class="text-white/80">Long Knife</span>
-          </p>
-        </div>
-      </div>
-      <figure class="relative h-72 sm:h-96 md:order-first md:h-auto">
+    <div class="md:grid md:grid-cols-5 md:items-stretch">
+
+      <!-- Image: 3 cols (first on desktop) -->
+      <figure class="relative min-h-72 sm:min-h-96 md:col-span-3 md:min-h-0 md:order-first order-last">
         <img
           src="/gallery/koch-rico-document.jpg"
           alt="An FBI file naming Charles Koch — theft and racketeering on the Osage Reservation."
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[var(--color-ink)] to-transparent md:block hidden"></div>
       </figure>
+
+      <!-- Text: 2 cols -->
+      <div class="flex items-center px-8 py-16 sm:px-12 sm:py-20 md:col-span-2 md:px-10 md:py-24 lg:px-16 lg:py-28">
+        <div class="w-full">
+          <p class="mb-6 text-[10px] tracking-[0.45em] text-[var(--color-red)] uppercase">The Accused</p>
+          <div class="mb-8 h-px w-10 bg-white/20"></div>
+          <blockquote class="space-y-5 font-[family-name:var(--font-quote)] text-xl leading-relaxed text-white italic sm:text-2xl">
+            <p>&ldquo;This is the story of the guy who took the $6 billion &mdash; Charlie. But Charlie had a problem: Everett Big Elk Waller. He's an Osage hunter: he hunts down oil rustlers.</p>
+            <p>And Charlie had another problem: Jim Elroy. Known as the Dirty Harry of the FBI.&rdquo;</p>
+          </blockquote>
+          <p class="mt-8 text-[11px] tracking-[0.3em] text-white/50 uppercase">— Robert De Niro, narrating <span class="text-white/70">Long Knife</span></p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- The heist (text left / burning Koch documents right) -->
+  <!-- § 3  The Heist — image RIGHT, text left -->
   <section class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl md:grid-cols-2 md:items-stretch">
-      <div class="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
-        <div class="space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-          <p
-            class="font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
-          >
+    <div class="md:grid md:grid-cols-5 md:items-stretch">
+
+      <!-- Text: 2 cols -->
+      <div class="flex items-center px-8 py-16 sm:px-12 sm:py-20 md:col-span-2 md:px-10 md:py-24 lg:px-16 lg:py-28">
+        <div class="w-full space-y-6">
+          <p class="mb-6 text-[10px] tracking-[0.45em] text-[var(--color-red)] uppercase">The Heist</p>
+          <div class="mb-2 h-px w-10 bg-white/20"></div>
+          <p class="font-[family-name:var(--font-quote)] text-3xl leading-snug text-white italic sm:text-4xl">
             The biggest oil heist in U.S. history.
           </p>
-          <p>
-            Over $6 billion in crude, carried away in the night by a trucking
-            company &mdash; now known as
-            <strong class="text-[var(--color-bone)]">Koch Industries</strong>.
+          <p class="text-base leading-relaxed text-white/75 sm:text-lg">
+            Over $6 billion in crude, carried away in the night by a trucking company &mdash; now known as <strong class="text-[var(--color-bone)]">Koch Industries</strong>.
           </p>
-          <p>
-            For the first time, we can reveal the dark source of the Kochs'
-            first billions &mdash; and the genesis of the feared Koch Political
-            Network. Charlie bought, muscled and threatened his way out of one
-            felony indictment after another, controlling U.S. Senators, judges
-            and prosecutors with a grip no mafia boss could dream of.
+          <p class="text-base leading-relaxed text-white/75 sm:text-lg">
+            For the first time, we can reveal the dark source of the Kochs' first billions &mdash; and the genesis of the feared Koch Political Network. Charlie bought, muscled and threatened his way out of one felony indictment after another, controlling U.S. Senators, judges and prosecutors with a grip no mafia boss could dream of.
           </p>
         </div>
       </div>
-      <figure class="relative h-72 sm:h-96 md:h-auto">
+
+      <!-- Image: 3 cols -->
+      <figure class="relative min-h-72 sm:min-h-[480px] md:col-span-3 md:min-h-0">
         <img
           src="/gallery/burning-koch-memo.jpg"
           alt="A Koch Industries memorandum burning."
           class="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--color-ink)] to-transparent md:block hidden"></div>
       </figure>
     </div>
   </section>
 
-  <!-- The evidence, part 1 (Palast in the field left / text right) -->
+  <!-- § 4  The Evidence — image LEFT, text right -->
   <section class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl md:grid-cols-2 md:items-stretch">
-      <div class="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
-        <div class="space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-          <p>
-            We've got Charlie's secret taped confession. We've got the
-            eyewitnesses and the stone-cold confidential documents that nail the
-            thievery.
-          </p>
-        </div>
-      </div>
-      <figure class="relative h-72 sm:h-96 md:order-first md:h-auto">
+    <div class="md:grid md:grid-cols-5 md:items-stretch">
+
+      <!-- Image: 3 cols -->
+      <figure class="relative min-h-72 sm:min-h-[480px] md:col-span-3 md:min-h-0 md:order-first order-last">
         <img
           src="/gallery/greg-palast.jpg"
           alt="Greg Palast inspecting oil-well piping in the field."
-          class="absolute inset-0 h-full w-full object-cover"
+          class="absolute inset-0 h-full w-full object-cover object-top"
           loading="lazy"
         />
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[var(--color-ink)] to-transparent md:block hidden"></div>
       </figure>
-    </div>
-  </section>
 
-  <!-- The evidence, part 2 (text left / Elroy right) -->
-  <section class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl md:grid-cols-2 md:items-stretch">
-      <div class="flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
-        <div class="space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-          <p>
-            Chief FBI investigator Elroy joins Osage spiritual leader and
-            investigator Waller, who bust the oil rustlers &mdash; and re-enact
-            the armed showdown with Koch goons.
+      <!-- Text: 2 cols -->
+      <div class="flex items-center px-8 py-16 sm:px-12 sm:py-20 md:col-span-2 md:px-10 md:py-24 lg:px-16 lg:py-28">
+        <div class="w-full space-y-6">
+          <p class="text-[10px] tracking-[0.45em] text-[var(--color-red)] uppercase">The Evidence</p>
+          <div class="h-px w-10 bg-white/20"></div>
+          <p class="text-base leading-relaxed text-white/80 sm:text-lg">
+            We've got Charlie's secret taped confession. We've got the eyewitnesses and the stone-cold confidential documents that nail the thievery.
           </p>
-          <p>
-            You like <cite>Landman</cite> and <cite>The Lowdown</cite>? This is
-            the true Oklahoma oil-patch story &mdash; far scarier, and the crimes
-            far bigger, than fiction.
+          <p class="text-base leading-relaxed text-white/80 sm:text-lg">
+            Chief FBI investigator Elroy joins Osage spiritual leader and investigator Waller, who bust the oil rustlers &mdash; and re-enact the armed showdown with Koch goons.
+          </p>
+          <p class="text-base leading-relaxed text-white/75 sm:text-lg">
+            You like <cite>Landman</cite> and <cite>The Lowdown</cite>? This is the true Oklahoma oil-patch story &mdash; far scarier, and the crimes far bigger, than fiction.
           </p>
         </div>
       </div>
-      <figure class="relative h-72 sm:h-96 md:h-auto">
-        <img
-          src="/gallery/jim-elroy.jpg"
-          alt="FBI investigator Jim Elroy holds up his credentials."
-          class="absolute inset-0 h-full w-full object-cover"
-          loading="lazy"
-        />
-      </figure>
     </div>
   </section>
 

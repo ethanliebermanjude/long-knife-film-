@@ -6,25 +6,19 @@ const voices = [
     name: "Geoffrey Standing Bear",
     role: "Principal Chief, Osage Nation",
     image: "/osage-standing-bear.jpg",
-    bio: [
-      "Principal Chief of the Osage Nation, a trial lawyer, and a consulting producer on <cite>Long Knife</cite>. He is filing lawsuits and leading the campaign to take back control of the Nation's land — and to shut down the abandoned wells still poisoning it.",
-    ],
+    bio: "Principal Chief of the Osage Nation, a trial lawyer, and a consulting producer on <cite>Long Knife</cite>. He is filing lawsuits and leading the campaign to take back control of the Nation's land — and to shut down the abandoned wells still poisoning it.",
   },
   {
     name: "Everett Waller",
     role: "Chairman, Osage Minerals Council",
     image: "/osage-waller.jpg",
-    bio: [
-      "Chairman of the Osage Minerals Council — and, as the film's narrator Robert De Niro puts it, an Osage hunter who tracks down the oil rustlers. He has spent years chasing the theft of his Nation's crude.",
-    ],
+    bio: "Chairman of the Osage Minerals Council — and, as the film's narrator Robert De Niro puts it, an Osage hunter who tracks down the oil rustlers. He has spent years chasing the theft of his Nation's crude.",
   },
   {
     name: "Tara Damron",
     role: "Archivist, Oklahoma Historical Society",
     image: "/osage-damron.jpg",
-    bio: [
-      "Tara Damron is Osage, and an archivist with the Oklahoma Historical Society. She is the plaintiff in a case at the heart of the Osage sovereignty battle.",
-    ],
+    bio: "Tara Damron is Osage, and an archivist with the Oklahoma Historical Society. She is the plaintiff in a case at the heart of the Osage sovereignty battle.",
   },
 ];
 ---
@@ -33,55 +27,54 @@ const voices = [
   title="The Osage — Long Knife"
   description="The Osage Nation: once the richest people in the world, and still fighting for sovereignty over their own land. The story Killers of the Flower Moon began."
 >
-  <!-- Hero: Everett Waller & Marian (no text overlay); nudged down so the nav doesn't clip his head -->
-  <section class="pt-12">
-    <figure class="relative aspect-video w-full overflow-hidden">
-      <img
-        src="/osage-couple.jpg"
-        alt="Everett Waller and Marian on the Osage prairie in traditional regalia."
-        class="h-full w-full object-cover"
-      />
-      <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-ink)]"
-      >
-      </div>
-    </figure>
-  </section>
 
-  <!-- Title + lede -->
-  <section class="px-6 py-20 sm:py-24">
-    <div class="mx-auto max-w-3xl">
-      <h1 class="sr-only">The Osage</h1>
-      <div
-        class="space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl"
-      >
-        <p
-          class="font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-4xl"
-        >
-          The richest people in the world.
-        </p>
-      <p>
-        In the 1870s, starvation and smallpox killed 90% of the tribe. Then oil
-        was discovered beneath their land — and by 1919 the Osage Nation held
-        the most valuable mineral rights on the continent, the richest people on
-        earth per capita.
-      </p>
-        <p>
-          <cite>Long Knife</cite> is the story of what happened next — and of
-          what is still happening. It is the documentary sequel to
-          <cite>Killers of the Flower Moon</cite>: same land, same wealth,
-          different criminals.
-        </p>
-      </div>
+  <!-- ── HERO ─────────────────────────────────────────────────────────
+       Cinematic opener: title overlaid on the couple image, same
+       language as the crimes page chapter headers.
+  ──────────────────────────────────────────────────────────────────── -->
+  <div class="relative h-[80vh] min-h-[520px] w-full">
+    <img
+      src="/still-richest.jpg"
+      alt="Two Osage members in traditional blankets beside a luxury automobile, circa 1920s."
+      class="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-black/20 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 px-10 pb-16 sm:px-16 lg:px-20 lg:pb-20">
+      <p class="text-[10px] tracking-[0.55em] text-[var(--color-red)] uppercase">The Osage Nation</p>
+      <h1 class="mt-3 font-[family-name:var(--font-display)] text-[clamp(3.5rem,9vw,7rem)] leading-[0.88] tracking-tight text-white">
+        The Richest<br/>People in<br/>the World.
+      </h1>
     </div>
-  </section>
+  </div>
 
-  <!-- Sovereignty -->
-  <section class="px-6 py-14 sm:py-24">
-    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-white/85 sm:text-xl">
-      <p class="text-xs tracking-[0.4em] text-[var(--color-red)] uppercase">
-        Sovereignty
-      </p>
+  <!-- ── LEDE ────────────────────────────────────────────────────────
+       Two-column split: history left, film's argument right.
+       Mirrors the Crime Three intro treatment.
+  ──────────────────────────────────────────────────────────────────── -->
+  <div class="grid md:grid-cols-2 px-10 pt-20 pb-16 sm:px-16 sm:pt-24 sm:pb-20 lg:px-20 lg:pt-28 lg:pb-24 gap-10 md:gap-20">
+    <p class="text-base leading-relaxed text-white/75 sm:text-lg">
+      In the 1870s, starvation and smallpox killed 90% of the tribe. Then oil
+      was discovered beneath their land — and by 1919 the Osage Nation held
+      the most valuable mineral rights on the continent, the richest people on
+      earth per capita.
+    </p>
+    <p class="text-base leading-relaxed text-white/75 sm:text-lg">
+      <cite class="not-italic text-[var(--color-bone)]">Long Knife</cite> is the story of what happened next — and of
+      what is still happening. It is the documentary sequel to
+      <cite>Killers of the Flower Moon</cite>: same land, same wealth,
+      different criminals.
+    </p>
+  </div>
+
+  <!-- ── SOVEREIGNTY ─────────────────────────────────────────────────
+       5-col offset: eyebrow + body left (3 cols), Waller quote right (2 cols).
+       Gives the quote space to breathe without the border-left treatment.
+  ──────────────────────────────────────────────────────────────────── -->
+  <div class="grid md:grid-cols-5 px-10 py-16 sm:px-16 sm:py-20 lg:px-20 lg:py-24 gap-10 md:gap-16">
+    <div class="md:col-span-3 space-y-6 text-base leading-relaxed text-white/75 sm:text-lg">
+      <p class="text-[10px] tracking-[0.55em] text-[var(--color-red)] uppercase">Sovereignty</p>
+      <div class="h-px w-8 bg-white/15"></div>
       <p>
         Big Oil sucked billions of dollars in petroleum from the reservation and
         walked away, leaving the Tribe with thousands of abandoned wells leaking
@@ -90,136 +83,117 @@ const voices = [
         lorded over by the Bureau of Indian Affairs.
       </p>
       <p>
-        Chief Standing Bear, a militant trial lawyer, is not waiting to find out
+        Chief Standing Bear, a trial lawyer, is not waiting to find out
         how the story ends. He is filing lawsuits and leading a campaign to take
         back control of his Nation's land and shut down the earth-destroying
         methane belching into the atmosphere.
       </p>
-      <blockquote
-        class="border-l-2 border-[var(--color-red)] pl-6 font-[family-name:var(--font-quote)] text-2xl leading-snug text-white italic sm:text-3xl"
-      >
-        &ldquo;Now how do you allow a company to just walk away like
-        that?&rdquo;
-        <cite
-          class="mt-4 block font-[family-name:var(--font-body)] text-[10px] tracking-[0.3em] text-white/50 not-italic uppercase"
-        >
+    </div>
+    <div class="md:col-span-2 flex items-center">
+      <blockquote class="text-center space-y-4 w-full">
+        <p class="font-[family-name:var(--font-quote)] text-[clamp(1.3rem,2.5vw,2rem)] leading-snug text-white italic">
+          &ldquo;Now how do you allow a company to just walk away like that?&rdquo;
+        </p>
+        <cite class="block text-[10px] tracking-[0.35em] text-white/40 not-italic uppercase">
           — Everett Waller, Chairman, Osage Minerals Council
         </cite>
       </blockquote>
     </div>
+  </div>
+
+  <!-- ── COUPLE IN REGALIA ───────────────────────────────────────────
+       Full-bleed, cropped to show faces and regalia.
+  ──────────────────────────────────────────────────────────────────── -->
+  <figure>
+    <img
+      src="/osage-couple.jpg"
+      alt="Everett Waller and Marian on the Osage prairie in traditional regalia."
+      class="h-[72vh] w-full object-cover object-top sm:h-[85vh]"
+      loading="lazy"
+    />
+  </figure>
+
+  <!-- ── VOICES ─────────────────────────────────────────────────────
+       Left-anchored header, same system as the rest of the site.
+       Each voice: 3-col image / 2-col text on the 5-col grid,
+       alternating sides, no centered floaty header above.
+  ──────────────────────────────────────────────────────────────────── -->
+  <section class="px-10 pt-20 pb-8 sm:px-16 sm:pt-28 lg:px-20 lg:pt-32">
+    <p class="text-[10px] tracking-[0.55em] text-[var(--color-red)] uppercase">Osage Voices in the Film</p>
+    <div class="mt-3 h-px w-8 bg-white/15"></div>
+    <h2 class="mt-6 font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] leading-[0.92] tracking-tight text-white">
+      Featured in<br/>Long Knife
+    </h2>
   </section>
 
-  <!-- Occupied territory -->
-  <section class="border-y border-white/10 bg-black/30 px-6 py-16 sm:py-28 text-center">
-    <p
-      class="mx-auto max-w-4xl font-[family-name:var(--font-quote)] text-3xl leading-tight text-white italic sm:text-5xl"
-    >
-      &ldquo;Let's not beat around the bush.
-      <span class="block text-[var(--color-red)] sm:mt-3">
-        This is occupied territory.&rdquo;
-      </span>
-    </p>
-    <p class="mt-8 text-[10px] tracking-[0.3em] text-white/50 uppercase">
-      — Principal Chief Geoffrey Standing Bear
-    </p>
-  </section>
-
-  <!-- Living culture -->
-  <section class="px-6 py-16">
-    <div class="mx-auto grid max-w-5xl gap-px bg-white/10 sm:grid-cols-2">
-      <figure class="bg-[var(--color-ink)]">
-        <img
-          src="/osage-dancer.jpg"
-          alt="An Osage dancer in full feather regalia mid-dance."
-          class="aspect-[4/3] w-full object-cover"
-          loading="lazy"
-        />
-      </figure>
-      <figure class="bg-[var(--color-ink)]">
-        <img
-          src="/osage-drum-circle.jpg"
-          alt="An Osage drum circle, singers around the drum with dancers in regalia."
-          class="aspect-[4/3] w-full object-cover"
-          loading="lazy"
-        />
-      </figure>
-    </div>
-  </section>
-
-  <!-- Voices -->
-  <section class="border-t border-white/10 px-6 py-14 sm:py-24">
-    <div class="mx-auto max-w-5xl">
-      <p
-        class="mb-4 text-center text-xs tracking-[0.4em] text-[var(--color-red)] uppercase"
-      >
-        Osage Voices in the Film
-      </p>
-      <h2
-        class="text-center font-[family-name:var(--font-display)] text-4xl tracking-tight sm:text-5xl"
-      >
-        Featured in Long Knife.
-      </h2>
-
-      <ul class="mt-16 space-y-16 sm:space-y-24">
-        {
-          voices.map((v, index) => {
-            const isReversed = index % 2 === 1;
-            return (
-              <li>
-                <div
-                  class:list={[
-                    "md:flex md:items-center md:gap-12",
-                    isReversed && "md:flex-row-reverse",
-                  ]}
-                >
-                  <div class="md:w-1/2 md:flex-shrink-0">
-                    <div class="aspect-[3/2] overflow-hidden border border-white/10 bg-black/30">
-                      <img
-                        src={v.image}
-                        alt={v.name}
-                        class="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div class="mt-6 md:mt-0 md:w-1/2">
-                    <p class="text-[10px] tracking-[0.3em] text-[var(--color-red)] uppercase sm:text-xs">
-                      {v.role}
-                    </p>
-                    <h3 class="mt-2 font-[family-name:var(--font-quote)] text-4xl leading-tight sm:text-5xl">
-                      {v.name}
-                    </h3>
-                    {v.bio.length > 0 && (
-                      <div class="mt-5 space-y-4 text-base leading-relaxed text-white/75">
-                        {v.bio.map((para) => (
-                          <p set:html={para} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
+  <ul>
+    {voices.map((v, index) => {
+      const imgRight = index % 2 === 0;
+      return (
+        <li class="md:grid md:grid-cols-5 md:items-stretch">
+          {imgRight ? (
+            <>
+              <div class="flex items-center px-10 py-16 sm:px-16 md:col-span-2 md:px-10 md:py-20 lg:px-20 lg:py-24">
+                <div class="w-full space-y-4">
+                  <p class="text-[10px] tracking-[0.4em] text-[var(--color-red)] uppercase">{v.role}</p>
+                  <h3 class="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] leading-[0.95] tracking-tight text-white">{v.name}</h3>
+                  <p class="pt-2 text-base leading-relaxed text-white/65 sm:text-lg" set:html={v.bio} />
                 </div>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </div>
-  </section>
+              </div>
+              <figure class="relative min-h-64 md:col-span-3 md:min-h-[440px]">
+                <img src={v.image} alt={v.name} class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+                <div class="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[var(--color-ink)] to-transparent hidden md:block"></div>
+              </figure>
+            </>
+          ) : (
+            <>
+              <figure class="relative min-h-64 md:col-span-3 md:min-h-[440px] md:order-first order-last">
+                <img src={v.image} alt={v.name} class="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
+                <div class="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[var(--color-ink)] to-transparent hidden md:block"></div>
+              </figure>
+              <div class="flex items-center px-10 py-16 sm:px-16 md:col-span-2 md:px-10 md:py-20 lg:px-16 lg:py-24">
+                <div class="w-full space-y-4">
+                  <p class="text-[10px] tracking-[0.4em] text-[var(--color-red)] uppercase">{v.role}</p>
+                  <h3 class="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.2rem)] leading-[0.95] tracking-tight text-white">{v.name}</h3>
+                  <p class="pt-2 text-base leading-relaxed text-white/65 sm:text-lg" set:html={v.bio} />
+                </div>
+              </div>
+            </>
+          )}
+        </li>
+      );
+    })}
+  </ul>
 
-  <!-- Bridge to the crimes -->
-  <section class="border-t border-white/10 px-6 py-14 sm:py-24 text-center">
-    <p
-      class="mx-auto max-w-3xl font-[family-name:var(--font-quote)] text-2xl leading-tight italic sm:text-3xl"
-    >
-      The oil was stolen. The land was poisoned. The story is not over.
+  <!-- ── CLOSE ───────────────────────────────────────────────────────
+       Typographic close, centered, generous space above.
+  ──────────────────────────────────────────────────────────────────── -->
+  <section class="px-10 pt-28 pb-32 sm:px-16 sm:pt-36 sm:pb-40 lg:px-20 text-center">
+    <p class="mx-auto max-w-2xl font-[family-name:var(--font-quote)] text-[clamp(1.5rem,3.5vw,2.5rem)] leading-snug text-white italic">
+      The oil was stolen. The land was poisoned.<br/>The story is not over.
     </p>
-    <div class="mt-10">
+    <div class="mt-12">
       <a
         href="/crimes"
-        class="inline-flex items-center gap-3 border border-[var(--color-bone)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)]"
+        class="btn-glint inline-flex items-center gap-3 bg-[var(--color-red)] px-8 py-4 text-xs tracking-[0.3em] uppercase transition-colors hover:bg-[var(--color-red-deep)]"
       >
         See the Crimes
       </a>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll(".btn-glint").forEach((btn) => {
+      const updatePos = (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        btn.style.setProperty("--mouse-x", `${x}%`);
+        btn.style.setProperty("--mouse-y", `${y}%`);
+      };
+      btn.addEventListener("mouseenter", updatePos);
+      btn.addEventListener("mousemove", updatePos);
+    });
+  </script>
+
 </Base>
